@@ -11,17 +11,11 @@ layout: default
         <h1 class="name">{{ site.author.name }}</h1>
         <h2 class="title">Senior ML Engineer</h2>
         <div class="button-group">
-          <a href="https://calendly.com/murtazaarif2k16/30min" target="_blank" class="cta-button">
-            <span class="button-content">
-              <i class="fas fa-calendar-alt"></i>
+          <a href="mailto:{{ site.author.email }}" class="cta-button">
+            <div class="button-content">
               <span class="button-text">Get in Touch</span>
-            </span>
-          </a>
-          <a href="/assets/resume.pdf" target="_blank" class="cta-button download-btn">
-            <span class="button-content">
-              <i class="fas fa-file-download"></i>
-              <span class="button-text">Download CV</span>
-            </span>
+              <i class="fas fa-envelope"></i>
+            </div>
           </a>
         </div>
       </div>
@@ -140,7 +134,8 @@ layout: default
 .button-group {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  align-items: center;
 }
 
 .cta-button {
@@ -200,14 +195,6 @@ layout: default
 
 .cta-button:hover i {
   transform: scale(1.1);
-}
-
-.download-btn::before {
-  background: linear-gradient(120deg, #4caf50 0%, #8bc34a 50%, #4caf50 100%);
-}
-
-.download-btn:hover::before {
-  background: linear-gradient(120deg, #8bc34a 0%, #4caf50 50%, #8bc34a 100%);
 }
 
 .stats {
