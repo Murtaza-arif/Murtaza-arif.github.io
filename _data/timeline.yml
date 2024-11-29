@@ -1,0 +1,90 @@
+- title: Senior ML Engineer, Blox
+  from: Jul 2023
+  to: Present
+  description: |
+               Architected robust AWS infrastructure to support the financial planning platform
+               Integrated OpenAI with Langchain to create an AI chatbot for financial modelling
+               Led a 4-member team to deliver platform enhancements and new features
+               Optimized calculation engine by migrating to Polars, reducing times by 30%
+               Implemented MLOps using AWS MLFlow for versioned model deployments
+               Developed agentic workflows to automate data processing and model training
+               Utilized RAG for enhanced language model outputs
+               Increased model accuracy by 25% through fine-tuning proprietary datasets
+
+- title: Senior ML Engineer, ONKO(Alvie)
+  from: Jan 2022
+  to: Jun 2023
+  description: |
+               Developed ML models for personalized healthcare improvement programs
+               Built predictive analytics pipeline reducing program time by 15%
+               Implemented recommendation engine using NLP, increasing user satisfaction by 25%
+               Established MLOps platform using Kubeflow, Airflow, and MLflow
+               Streamlined data ingestion from wearable devices for real-time monitoring
+               Implemented robust data governance ensuring healthcare compliance
+               Leveraged transfer learning for rapid model deployment in new clinical cases
+
+- title: ML Engineer, Aligned Automation
+  from: Jul 2021
+  to: Dec 2021
+  description: |
+               Built scalable batch processing system with Kubernetes and RabbitMQ, improving throughput by 50%
+               Automated PowerPoint report generation, saving 80 hours per month
+               Fine-tuned OpenAI models with custom datasets, increasing content relevance by 30%
+               Created data pipeline to preprocess user answers for CRM personalization
+               Utilized Pinecone vector database for efficient embedding storage and retrieval
+               Integrated AWS Lambda and Step Functions for serverless transformations
+
+- title: AI Tech Lead, Siya Tech Ventures
+  from: Jul 2021
+  to: Present
+  description: |
+               Leading AI initiatives and mentoring technical teams across multiple projects
+               Developing full-stack applications with focus on ML/AI integration
+               Implementing MLOps best practices and ensuring scalable architecture
+               Guiding teams in LLM implementation and fine-tuning strategies
+               Establishing coding standards and review processes
+               Driving innovation in AI-powered solutions for startups
+
+- title: SDE 1, Compass
+  from: May 2020
+  to: Jul 2021
+  description: |
+               Developed and maintained core platform features using modern tech stack
+               Implemented automated testing and CI/CD pipelines
+               Collaborated with cross-functional teams for feature development
+               Optimized database queries and API performance
+               Contributed to architecture decisions and technical documentation
+               Mentored junior developers and conducted code reviews
+
+- title: ML Engineer, Fantasy King
+  from: Jan 2018
+  to: Jun 2020
+  description: |
+               Developed player performance prediction models using ensemble methods
+               Created recommendation systems using collaborative filtering
+               Engineered real-time match statistics processing system
+               Implemented automated data collection and preprocessing pipelines
+               Optimized model performance for real-time predictions
+               Built analytics dashboard for performance monitoring
+
+- title: Data Engineer, Golfhubber
+  from: Apr 2017
+  to: Dec 2018
+  description: |
+               Built robust data pipelines and ETL processes
+               Implemented analytics dashboards and reporting systems
+               Managed database optimization and maintenance
+               Developed data quality monitoring tools
+               Created automated data validation processes
+               Implemented data warehousing solutions
+
+- title: Full Stack Developer, TPI Labs & Siya Tech
+  from: Aug 2016
+  to: May 2020
+  description: |
+               Developed full-stack applications using modern web technologies
+               Implemented responsive UI designs and RESTful APIs
+               Managed database design and optimization
+               Created microservices architecture
+               Implemented authentication and authorization systems
+               Developed automated deployment pipelines

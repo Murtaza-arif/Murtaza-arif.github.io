@@ -1,0 +1,110 @@
+### Site Settings ###
+title               : Murtaza Icecreamwala
+description         : >-
+                      Building intelligent systems with ML/AI 🤖,
+                      architecting scalable cloud solutions ☁️,
+                      and transforming ideas into reality 💡
+baseurl             : ""
+repository          : Murtaza-arif/murtazaarif.github.io
+remote_theme        : yousinix/portfolYOU
+open_new_tab        : true                    # Opens external URLs in new tab (works for posts, projects and navbar only)
+
+
+### Plugins ###
+plugins:
+  - jemoji
+
+
+### Navbar Settings ###
+nav_exclude:                                            # The following paths are excluded from navbar
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
+  - documentation/partials/**                           # For Documentation Only
+
+
+### Author Info ###
+author:
+  name              : Murtaza Icecreamwala
+  image             : https://i.ibb.co/KGF2CLs/murtaza.jpg
+  # behance           : your_username
+# dribbble          : your_username
+  email             : murtazaarif2k16@gmail.com
+  # facebook          : your_username
+  github            : Murtaza-arif
+# gitlab            : your_username
+# instagram         : your_username
+# kaggle            : your_username
+  linkedin          : murtaza-icecreamwala
+  medium            : murtaza-icecreamwala
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+  twitter           : MurtazaArif786
+# vimeo             : your_username
+# youtube           : your_channel_name
+# keybase           : your_username
+
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+  elements:                                             # For Documentation Only
+    output: true                                        # For Documentation Only
+
+
+### Disqus ###
+disqus:
+  shortname: your-short-name-disqus                     # Your website Shortname on disqus
+
+
+### Analytics ###
+analytics:
+  enabled: true                                        # Set true to enable analytics
+  google:
+    tracking_id: G-TBBZSW0SEQ
+
+
+### Buy me a coffee ###
+# See https://www.buymeacoffee.com/
+buymeacoffee:
+  enabled: false
+  username: your_username
+  color: "#007bff"
+  message: "Thank you for visiting."                    # Message to be displayed aside from the button for a few seconds.
+  description: "Support me on Buy me a coffee!"
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:                                              # For Documentation Only
+      path: ""                                          # For Documentation Only
+      type: "elements"                                  # For Documentation Only
+    values:                                             # For Documentation Only
+      layout: "element"                                 # For Documentation Only
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false                                   # Set to true to enable disqus comments
+
+
+### Exclude from processing ###
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - "*.log"

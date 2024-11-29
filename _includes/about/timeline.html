@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="col mt-4">
+    <div class="timeline-body">
+      {% for item in site.data.timeline %}
+        <div class="timeline-item">
+          <div class="content">
+            <h2>{{ item.title }}</h2>
+            <h6 class="date">{{ item.from }} — {{ item.to }}</h6>
+            <div class="description">
+              {% assign lines = item.description | newline_to_br | split: '<br />' %}
+              {% for line in lines %}
+                {% assign trimmed_line = line | strip %}
+                {% if trimmed_line != "" %}
+                  <p class="mb-2">{{ trimmed_line }}</p>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+.timeline-body {
+  position: relative;
+  background-color: var(--bg-color);
+  border-radius: 0 15px 15px 0;
+  padding: 5px 0;
+}
+
+.timeline-body:after {
+  content: "";
+  width: 4px;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  left: -4px;
+  top: 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-left: 20px;
+  background-color: inherit;
+  padding: 5px 0;
+}
+
+.timeline-item:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  background-color: var(--bg-color);
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  z-index: 1;
+}
+
+.timeline-item .content {
+  margin: 4px 20px !important;
+}
+
+.timeline-item .content h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.timeline-item .content .date {
+  margin: 5px 0 10px 0 !important;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+.timeline-item .content .description p {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.timeline-item .content .description p:before {
+  content: "•";
+  color: var(--primary);
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .timeline-body {
+    background-color: var(--bg-color);
+  }
+  
+  .timeline-item:after {
+    background-color: var(--bg-color);
+  }
+  
+  .timeline-item .content h2,
+  .timeline-item .content .description p {
+    color: var(--text-color);
+  }
+}
+</style>

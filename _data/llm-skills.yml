@@ -1,0 +1,31 @@
+- name: OpenAI/GPT
+  percentage: 90
+  color: success
+
+- name: LangChain
+  percentage: 85
+  color: primary
+
+- name: RAG
+  percentage: 90
+  color: danger
+
+- name: Prompt Engineering
+  percentage: 85
+  color: warning
+
+- name: Vector Databases
+  percentage: 80
+  color: info
+
+- name: LLM Fine-tuning
+  percentage: 85
+  color: secondary
+
+- name: Embeddings
+  percentage: 80
+  color: success
+
+- name: Context Window Optimization
+  percentage: 75
+  color: primary
