@@ -6,7 +6,7 @@ description         : >-
                       and transforming ideas into reality 💡
 baseurl             : ""
 repository          : ""
-remote_theme        : yousinix/portfolYOU
+remote_theme        : yousinix/portfolYOU:2.3.0
 open_new_tab        : true                    # Opens external URLs in new tab (works for posts, projects and navbar only)
 
 
