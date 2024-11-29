@@ -16,7 +16,8 @@ layout: default
         <img src="https://i.ibb.co/KGF2CLs/murtaza.jpg" alt="{{ site.author.name }}" />
       </div>
     </div>
-
+<br>
+<br>
     <div class="stats">
       <div class="stat-item">
         <h3>8+</h3>
@@ -128,16 +129,24 @@ layout: default
 .cta-button {
   display: inline-block;
   padding: 0.8rem 2rem;
-  background-color: #000;
-  color: #fff;
-  border-radius: 30px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 500;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 2px solid #00bcd4;
+  position: relative;
+  background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
+              linear-gradient(45deg, #00bcd4, #2196f3) border-box;
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
+              linear-gradient(45deg, #2196f3, #00bcd4) border-box;
 }
 
 .stats {
@@ -214,8 +223,13 @@ layout: default
   }
   
   .cta-button {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
+                linear-gradient(45deg, #00bcd4, #2196f3) border-box;
+  }
+  
+  .cta-button:hover {
+    background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
+                linear-gradient(45deg, #2196f3, #00bcd4) border-box;
   }
   
   .profile-image img {
