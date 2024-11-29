@@ -5,7 +5,7 @@ description         : >-
                       architecting scalable cloud solutions ☁️,
                       and transforming ideas into reality 💡
 baseurl             : ""
-repository          : Murtaza-arif/murtazaarif.github.io
+repository          : ""
 remote_theme        : yousinix/portfolYOU
 open_new_tab        : true                    # Opens external URLs in new tab (works for posts, projects and navbar only)
 

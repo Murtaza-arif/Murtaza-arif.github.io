@@ -1,90 +1,78 @@
-- title: Senior ML Engineer, Blox
+- title: Senior Full Stack ML Engineer, Blox
   from: Jul 2023
   to: Present
   description: |
-               Architected robust AWS infrastructure to support the financial planning platform
-               Integrated OpenAI with Langchain to create an AI chatbot for financial modelling
-               Led a 4-member team to deliver platform enhancements and new features
-               Optimized calculation engine by migrating to Polars, reducing times by 30%
-               Implemented MLOps using AWS MLFlow for versioned model deployments
+               Led development of financial planning platform's AI infrastructure on AWS
+               Integrated OpenAI with Langchain for intelligent financial modeling
+               Optimized calculation engine using Polars, achieving 30% faster processing
+               Implemented MLOps using AWS MLflow for versioned model deployments
                Developed agentic workflows to automate data processing and model training
-               Utilized RAG for enhanced language model outputs
-               Increased model accuracy by 25% through fine-tuning proprietary datasets
+               Utilized RAG techniques with vector databases for enhanced LLM applications
+               Built scalable batch processing systems with Kubernetes and RabbitMQ
 
-- title: Senior ML Engineer, ONKO(Alvie)
+- title: Senior Full Stack ML Engineer, ONKO(Alvie)
   from: Jan 2022
   to: Jun 2023
   description: |
-               Developed ML models for personalized healthcare improvement programs
-               Built predictive analytics pipeline reducing program time by 15%
-               Implemented recommendation engine using NLP, increasing user satisfaction by 25%
+               Developed ML models improving healthcare program effectiveness by 15%
                Established MLOps platform using Kubeflow, Airflow, and MLflow
-               Streamlined data ingestion from wearable devices for real-time monitoring
-               Implemented robust data governance ensuring healthcare compliance
-               Leveraged transfer learning for rapid model deployment in new clinical cases
+               Created comprehensive testing suite ensuring system reliability
+               Implemented robust data governance for healthcare compliance
+               Built predictive analytics pipeline for personalized healthcare
+               Streamlined real-time data ingestion from wearable devices
+               Leveraged transfer learning for rapid clinical model deployment
 
-- title: ML Engineer, Aligned Automation
+- title: Full Stack ML Engineer, Aligned Automation
   from: Jul 2021
   to: Dec 2021
   description: |
-               Built scalable batch processing system with Kubernetes and RabbitMQ, improving throughput by 50%
-               Automated PowerPoint report generation, saving 80 hours per month
-               Fine-tuned OpenAI models with custom datasets, increasing content relevance by 30%
-               Created data pipeline to preprocess user answers for CRM personalization
-               Utilized Pinecone vector database for efficient embedding storage and retrieval
-               Integrated AWS Lambda and Step Functions for serverless transformations
+               Architected scalable batch processing systems using Kubernetes
+               Integrated RabbitMQ for improved message queue management
+               Automated report generation saving significant operational time
+               Fine-tuned LLMs with custom datasets for enhanced relevance
+               Implemented vector databases for efficient embedding storage
+               Developed serverless pipelines using AWS Lambda and Step Functions
 
-- title: AI Tech Lead, Siya Tech Ventures
-  from: Jul 2021
+- title: Tech Lead, Siya Tech Ventures
+  from: July 2021
   to: Present
   description: |
-               Leading AI initiatives and mentoring technical teams across multiple projects
-               Developing full-stack applications with focus on ML/AI integration
-               Implementing MLOps best practices and ensuring scalable architecture
-               Guiding teams in LLM implementation and fine-tuning strategies
+               Leading AI initiatives and technical architecture decisions
+               Mentoring teams in ML/AI integration and best practices
+               Implementing MLOps workflows and scalable architectures
                Establishing coding standards and review processes
-               Driving innovation in AI-powered solutions for startups
+               Driving innovation in AI-powered solutions
+               Guiding teams in LLM implementation strategies
 
-- title: SDE 1, Compass
+- title: Software Development Engineer, Compass
   from: May 2020
-  to: Jul 2021
+  to: July 2021
   description: |
-               Developed and maintained core platform features using modern tech stack
+               Developed core platform features with modern tech stack
                Implemented automated testing and CI/CD pipelines
-               Collaborated with cross-functional teams for feature development
                Optimized database queries and API performance
-               Contributed to architecture decisions and technical documentation
+               Contributed to architecture decisions
+               Created technical documentation and standards
                Mentored junior developers and conducted code reviews
 
-- title: ML Engineer, Fantasy King
+- title: Full Stack ML Engineer, Fantasy King
   from: Jan 2018
-  to: Jun 2020
+  to: May 2020
   description: |
-               Developed player performance prediction models using ensemble methods
+               Built ML models for player performance prediction
+               Developed real-time statistics processing system
                Created recommendation systems using collaborative filtering
-               Engineered real-time match statistics processing system
-               Implemented automated data collection and preprocessing pipelines
-               Optimized model performance for real-time predictions
-               Built analytics dashboard for performance monitoring
+               Implemented automated data pipelines
+               Optimized models for real-time predictions
+               Designed analytics dashboards for monitoring
 
-- title: Data Engineer, Golfhubber
+- title: Full Stack Data Engineer, Golfhubber
   from: Apr 2017
   to: Dec 2018
   description: |
-               Built robust data pipelines and ETL processes
-               Implemented analytics dashboards and reporting systems
+               Engineered robust data pipelines and ETL processes
+               Built analytics dashboards and reporting systems
                Managed database optimization and maintenance
-               Developed data quality monitoring tools
+               Implemented data quality monitoring tools
                Created automated data validation processes
-               Implemented data warehousing solutions
-
-- title: Full Stack Developer, TPI Labs & Siya Tech
-  from: Aug 2016
-  to: May 2020
-  description: |
-               Developed full-stack applications using modern web technologies
-               Implemented responsive UI designs and RESTful APIs
-               Managed database design and optimization
-               Created microservices architecture
-               Implemented authentication and authorization systems
-               Developed automated deployment pipelines
+               Developed data warehousing solutions
