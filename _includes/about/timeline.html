@@ -1,5 +1,6 @@
-<div class="row">
-  <div class="col mt-4">
+<div class="timeline-container">
+  <button class="nav-button prev-button" onclick="scrollTimeline('left')">&lt;</button>
+  <div class="timeline-scroll" id="timelineScroll">
     <div class="timeline-body">
       {% for item in site.data.timeline %}
         <div class="timeline-item">
@@ -20,48 +21,167 @@
       {% endfor %}
     </div>
   </div>
+  <button class="nav-button next-button" onclick="scrollTimeline('right')">&gt;</button>
 </div>
 
+<script>
+function scrollTimeline(direction) {
+  const container = document.getElementById('timelineScroll');
+  const cardWidth = container.offsetWidth;
+  
+  if (direction === 'left') {
+    container.scrollBy({
+      left: -cardWidth,
+      behavior: 'smooth'
+    });
+  } else {
+    container.scrollBy({
+      left: cardWidth,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Show/hide buttons based on scroll position
+document.getElementById('timelineScroll').addEventListener('scroll', function() {
+  const container = this;
+  const prevButton = document.querySelector('.prev-button');
+  const nextButton = document.querySelector('.next-button');
+  
+  // Show/hide previous button
+  if (container.scrollLeft <= 0) {
+    prevButton.style.opacity = '0.5';
+    prevButton.style.cursor = 'not-allowed';
+  } else {
+    prevButton.style.opacity = '1';
+    prevButton.style.cursor = 'pointer';
+  }
+  
+  // Show/hide next button
+  if (container.scrollLeft >= (container.scrollWidth - container.clientWidth - 10)) {
+    nextButton.style.opacity = '0.5';
+    nextButton.style.cursor = 'not-allowed';
+  } else {
+    nextButton.style.opacity = '1';
+    nextButton.style.cursor = 'pointer';
+  }
+});
+
+// Center the first card on load
+window.addEventListener('load', function() {
+  const container = document.getElementById('timelineScroll');
+  const firstCard = container.querySelector('.timeline-item');
+  if (firstCard) {
+    firstCard.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'start' });
+  }
+});
+</script>
+
 <style>
+.timeline-container {
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.timeline-scroll {
+  width: 100%;
+  overflow-x: hidden;
+  padding: 20px 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.nav-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.nav-button:hover {
+  background-color: var(--secondary);
+  transform: scale(1.1);
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .timeline-body {
+  display: flex;
   position: relative;
   background-color: var(--bg-color);
-  border-radius: 0 15px 15px 0;
-  padding: 5px 0;
+  padding: 20px 0;
+  gap: 0;
+  width: 100%;
 }
 
 .timeline-body:after {
   content: "";
-  width: 4px;
-  height: 100%;
+  height: 4px;
   background-color: var(--primary);
   position: absolute;
-  left: -4px;
-  top: 0;
+  left: 0;
+  right: 0;
+  top: 50px;
+  z-index: 0;
 }
 
 .timeline-item {
   position: relative;
-  margin-left: 20px;
-  background-color: inherit;
-  padding: 5px 0;
+  flex: 0 0 100%;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
 }
 
 .timeline-item:after {
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 4px solid var(--primary);
   background-color: var(--bg-color);
   position: absolute;
-  left: -10px;
-  top: 5px;
+  left: 50%;
+  top: -38px;
+  transform: translateX(-50%);
   z-index: 1;
 }
 
 .timeline-item .content {
-  margin: 4px 20px !important;
+  margin: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeline-item .content h2 {
@@ -72,9 +192,15 @@
 }
 
 .timeline-item .content .date {
-  margin: 5px 0 10px 0 !important;
+  margin: 5px 0 15px 0 !important;
   color: var(--secondary);
   font-size: 0.9rem;
+}
+
+.timeline-item .content .description {
+  flex-grow: 1;
+  overflow: visible;
+  padding-right: 10px;
 }
 
 .timeline-item .content .description p {
@@ -91,8 +217,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .timeline-body {
+  .timeline-item {
     background-color: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
   }
   
   .timeline-item:after {
@@ -102,6 +229,28 @@
   .timeline-item .content h2,
   .timeline-item .content .description p {
     color: var(--text-color);
+  }
+
+  .nav-button {
+    background-color: var(--primary);
+    color: var(--bg-color);
+  }
+
+  .nav-button:hover {
+    background-color: var(--secondary);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .nav-button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .timeline-container {
+    gap: 10px;
   }
 }
 </style>
