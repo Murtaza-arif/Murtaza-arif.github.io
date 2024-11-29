@@ -10,14 +10,26 @@ layout: default
       <div class="text-content">
         <h1 class="name">{{ site.author.name }}</h1>
         <h2 class="title">Senior ML Engineer</h2>
-         <a href="https://calendly.com/murtazaarif2k16/30min" target="_blank" class="cta-button">Get in Touch</a>
+        <div class="button-group">
+          <a href="https://calendly.com/murtazaarif2k16/30min" target="_blank" class="cta-button">
+            <span class="button-content">
+              <i class="fas fa-calendar-alt"></i>
+              <span class="button-text">Get in Touch</span>
+            </span>
+          </a>
+          <a href="/assets/resume.pdf" target="_blank" class="cta-button download-btn">
+            <span class="button-content">
+              <i class="fas fa-file-download"></i>
+              <span class="button-text">Download CV</span>
+            </span>
+          </a>
+        </div>
       </div>
       <div class="profile-image">
         <img src="https://i.ibb.co/KGF2CLs/murtaza.jpg" alt="{{ site.author.name }}" />
       </div>
     </div>
-<br>
-<br>
+
     <div class="stats">
       <div class="stat-item">
         <h3>8+</h3>
@@ -104,7 +116,6 @@ layout: default
   width: 100%;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
@@ -126,27 +137,77 @@ layout: default
   margin-bottom: 2rem;
 }
 
+.button-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
 .cta-button {
   display: inline-block;
-  padding: 0.8rem 2rem;
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  border-radius: 50px;
+  padding: 0.9rem 2.2rem;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 2px solid #00bcd4;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
-  background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
-              linear-gradient(45deg, #00bcd4, #2196f3) border-box;
+  color: var(--text-color);
+  background: var(--bg-color);
+  border: none;
+  z-index: 1;
+  border-radius: 50px;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 3px;
+  background: linear-gradient(120deg, #00bcd4 0%, #3f51b5 50%, #00bcd4 100%);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  position: relative;
+}
+
+.button-text {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.cta-button i {
+  font-size: 1.1rem;
+  transition: transform 0.4s ease;
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
-              linear-gradient(45deg, #2196f3, #00bcd4) border-box;
+  transform: translateY(-2px);
+}
+
+.cta-button:hover::before {
+  background: linear-gradient(120deg, #3f51b5 0%, #00bcd4 50%, #3f51b5 100%);
+}
+
+.cta-button:hover i {
+  transform: scale(1.1);
+}
+
+.download-btn::before {
+  background: linear-gradient(120deg, #4caf50 0%, #8bc34a 50%, #4caf50 100%);
+}
+
+.download-btn:hover::before {
+  background: linear-gradient(120deg, #8bc34a 0%, #4caf50 50%, #8bc34a 100%);
 }
 
 .stats {
@@ -154,7 +215,8 @@ layout: default
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  padding: 0 2rem;
 }
 
 .stat-item {
@@ -187,6 +249,10 @@ layout: default
   .profile-image {
     max-width: 300px;
   }
+  
+  .stats {
+    margin-top: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -200,6 +266,7 @@ layout: default
   
   .stats {
     gap: 2rem;
+    margin-top: 2rem;
   }
   
   .stat-item h3 {
@@ -209,31 +276,27 @@ layout: default
   .stat-item p {
     font-size: 1rem;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .social-icon {
-    border-color: var(--text-color);
-    color: var(--text-color);
-  }
   
-  .social-icon:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
   }
   
   .cta-button {
-    background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
-                linear-gradient(45deg, #00bcd4, #2196f3) border-box;
+    text-align: center;
+    padding: 0.8rem 1.8rem;
   }
   
-  .cta-button:hover {
-    background: linear-gradient(var(--text-color), var(--text-color)) padding-box,
-                linear-gradient(45deg, #2196f3, #00bcd4) border-box;
+  .button-content {
+    justify-content: center;
   }
-  
-  .profile-image img {
-    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .cta-button {
+    color: var(--text-color);
+    background: var(--bg-color);
   }
 }
 </style>
