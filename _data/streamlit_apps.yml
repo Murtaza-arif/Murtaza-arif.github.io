@@ -1,0 +1,42 @@
+# List your Streamlit apps here
+- name: "Energy RAG"
+  description: "An intelligent RAG application focused on energy sector research papers and articles. Features semantic search, document Q&A, and multi-document summarization using state-of-the-art LLMs to help researchers and professionals navigate energy sector literature efficiently."
+  tags: ["Energy Sector", "Document Q&A", "Semantic Search", "LLM"]
+  image: "https://raw.githubusercontent.com/Siya-Tech-Ventures/RAG-Domains-Adopters/refs/heads/main/energy/energy-rag.webp"
+  app_url: "https://energy-rag.streamlit.app/"
+  github_url: "https://github.com/siya-tech-ventures/rag-domains-adopters/blob/main/energy/"
+
+- name: "Sports RAG"
+  description: "A specialized cricket match analysis RAG system powered by Google's Gemini Pro. Designed for in-depth cricket match analysis, tactical decision-making, and player performance prediction. Features query-based match analysis and comprehensive insights into cricket strategies and statistics."
+  tags: ["Cricket Analysis", "Gemini Pro", "Performance Prediction", "Match Analytics"]
+  image: "https://raw.githubusercontent.com/Siya-Tech-Ventures/RAG-Domains-Adopters/refs/heads/main/sports/sports-rag.webp"
+  app_url: "https://stv-sport-rag.streamlit.app/"
+  github_url: "https://github.com/siya-tech-ventures/rag-domains-adopters/blob/main/sports/"
+
+- name: "Healthcare RAG"
+  description: "A sophisticated RAG-based chatbot designed specifically for healthcare regulatory compliance queries. Combines Google's Gemini Pro model with OpenAI embeddings to provide accurate information from regulatory documents, helping healthcare professionals navigate complex compliance requirements."
+  tags: ["Healthcare", "Regulatory Compliance", "Gemini Pro", "OpenAI"]
+  image: "https://raw.githubusercontent.com/Siya-Tech-Ventures/RAG-Domains-Adopters/refs/heads/main/healthcare/healthcare-rag.webp"
+  app_url: "https://stv-healthcare-rag.streamlit.app/"
+  github_url: "https://github.com/siya-tech-ventures/rag-domains-adopters/blob/main/healthcare/"
+
+- name: "Finance RAG"
+  description: "A sophisticated RAG system designed for financial document analysis, market insights, and investment research. Leverages OpenAI's capabilities to process financial documents, analyze market data, and generate actionable investment insights for financial professionals."
+  tags: ["Finance", "Market Analysis", "Investment Research", "OpenAI"]
+  image: "https://raw.githubusercontent.com/Siya-Tech-Ventures/RAG-Domains-Adopters/refs/heads/main/finance/finance-rag.webp"
+  app_url: "https://stv-finance-rag.streamlit.app/"
+  github_url: "https://github.com/siya-tech-ventures/rag-domains-adopters/blob/main/finance/"
+
+- name: "Real Estate RAG"
+  description: "A powerful RAG application for the real estate domain that enables users to query and analyze real estate documents, listings, market data, and legal documents using natural language processing. Helps real estate professionals and investors make informed decisions through advanced document analysis."
+  tags: ["Real Estate", "Market Analysis", "Document Analysis", "NLP"]
+  image: "https://raw.githubusercontent.com/Siya-Tech-Ventures/RAG-Domains-Adopters/refs/heads/main/realestate/realestate-rag.webp"
+  app_url: "https://stv-realestate-rag.streamlit.app/"
+  github_url: "https://github.com/siya-tech-ventures/rag-domains-adopters/blob/main/realestate/"
+
+# Add more apps by copying the format above
+# - name: "Example App 2"
+#   description: "Description of your second Streamlit app"
+#   image: "/assets/streamlit_apps/app2.png"
+#   app_url: "https://your-app2-url.streamlit.app"
+#   github_url: "https://github.com/yourusername/app2-repo"

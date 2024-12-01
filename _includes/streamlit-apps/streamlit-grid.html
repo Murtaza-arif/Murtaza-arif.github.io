@@ -1,0 +1,173 @@
+<!-- Streamlit Apps Grid -->
+<style>
+:root {
+    --card-bg: linear-gradient(145deg, #ffffff, #f8f9fa);
+    --section-bg: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    --card-text: #24292e;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --tag-bg: rgba(0, 123, 255, 0.1);
+    --tag-border: #007bff;
+    --tag-text: #007bff;
+    --tag-shadow: rgba(0, 123, 255, 0.1);
+    --footer-border: rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    --card-bg: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    --section-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --card-text: #ffffff;
+    --card-shadow: rgba(31, 38, 135, 0.37);
+    --tag-bg: rgba(0, 123, 255, 0.1);
+    --tag-border: #58a6ff;
+    --tag-text: #58a6ff;
+    --tag-shadow: rgba(0, 123, 255, 0.2);
+    --footer-border: rgba(255, 255, 255, 0.1);
+    --card-hover-shadow: rgba(31, 38, 135, 0.45);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 8px 32px 0 var(--card-shadow);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--card-text);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 var(--card-hover-shadow);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    color: var(--card-text);
+}
+
+.tags {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    color: var(--tag-text);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 10px var(--tag-shadow);
+}
+
+.tag:hover {
+    background: var(--tag-bg);
+    border-color: var(--tag-border);
+    box-shadow: 0 0 15px var(--tag-shadow);
+    transform: translateY(-1px);
+}
+
+.card-footer {
+    background: transparent;
+    border-top: 1px solid var(--footer-border);
+    padding: 1.25rem;
+    border-radius: 0 0 12px 12px;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #1f6feb);
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #1a5fcf);
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(108, 117, 125, 0.3);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #5a6268, #3d4246);
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(108, 117, 125, 0.4);
+    color: #ffffff;
+}
+
+.streamlit-section {
+    background: var(--section-bg);
+    min-height: 100vh;
+    padding: 3rem 0;
+}
+
+.container {
+    padding: 2rem 0;
+}
+</style>
+
+<div class="streamlit-section">
+    <div class="container">
+        <div class="row">
+            {% for app in site.data.streamlit_apps %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ app.image }}" alt="{{ app.name }}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ app.name }}</h4>
+                        <div class="tags">
+                            {% for tag in app.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ app.app_url }}" class="btn btn-primary" target="_blank">Launch App</a>
+                        {% if app.github_url %}
+                        <a href="{{ app.github_url }}" class="btn btn-secondary ml-2" target="_blank">View Code</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

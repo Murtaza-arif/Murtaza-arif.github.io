@@ -1,0 +1,14 @@
+- name: About
+  link: /about/
+  
+- name: Projects
+  link: /projects/
+  
+- name: Streamlit Apps
+  link: /streamlit-apps/
+  
+- name: Blog
+  link: /blog/
+  
+- name: Certifications
+  link: /certifications/
