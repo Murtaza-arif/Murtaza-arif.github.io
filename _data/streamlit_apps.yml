@@ -34,6 +34,13 @@
   app_url: "https://stv-realestate-rag.streamlit.app/"
   github_url: "https://github.com/siya-tech-ventures/rag-domains-adopters/blob/main/realestate/"
 
+- name: "Multimodal Chat"
+  description: "A powerful multimodal chatbot that combines advanced AI capabilities with practical tools. Features include image analysis with OCR, information retrieval (web search, Wikipedia, ArXiv), real-time data analysis (stocks, weather, news), and file operations. Built with Google's Gemini Pro Vision, it offers comprehensive responses by seamlessly integrating visual understanding with diverse data sources and tools."
+  tags: ["Multimodal AI", "Computer Vision", "Information Retrieval", "Data Analysis", "OCR", "OpenAI", "LLM"]
+  image: "https://raw.githubusercontent.com/Siya-Tech-Ventures/Agentic-Workflows-Playbook/main/multimodal_bot/thumbnail.webp"
+  app_url: "https://stv-multimodal-chat.streamlit.app/"
+  github_url: "https://github.com/Siya-Tech-Ventures/Agentic-Workflows-Playbook/tree/main/multimodal_bot"
+
 # Add more apps by copying the format above
 # - name: "Example App 2"
 #   description: "Description of your second Streamlit app"
