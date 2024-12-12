@@ -9,7 +9,7 @@ layout: default
     <div class="profile-header">
       <div class="text-content">
         <h1 class="name">{{ site.author.name }}</h1>
-        <h2 class="title">Senior ML Engineer</h2>
+        <h2 class="title">Senior Full Stack ML Engineer</h2>
         <div class="button-group">
           <a href="mailto:{{ site.author.email }}" class="cta-button">
             <div class="button-content">
