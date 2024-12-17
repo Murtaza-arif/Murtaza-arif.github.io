@@ -1,78 +1,130 @@
-- title: Senior Full Stack ML Engineer, Blox
+- title: Senior Full Stack ML Engineer, Blox AI Fintech
   from: Jul 2023
   to: Present
   description: |
-               Led development of financial planning platform's AI infrastructure on AWS
-               Integrated OpenAI with Langchain for intelligent financial modeling
-               Optimized calculation engine using Polars, achieving 30% faster processing
-               Implemented MLOps using AWS MLflow for versioned model deployments
-               Developed agentic workflows to automate data processing and model training
-               Utilized RAG techniques with vector databases for enhanced LLM applications
-               Built scalable batch processing systems with Kubernetes and RabbitMQ
+               Architected AWS infrastructure for financial planning platform
+               Integrated OpenAI and Langchain for AI-powered financial modeling
+               Optimized calculation engine with Polars, reducing time by 30%
+               Implemented MLOps using AWS MLflow for model versioning
+               Developed agentic workflows for automated data processing
+               Enhanced LLM outputs using RAG techniques
+               Leveraged AWS SageMaker for ML model deployment
+               Engineered ETL pipeline with AWS Glue and Redshift
+               Integrated Stripe payment for subscription management
+               Increased model accuracy by 25% through fine-tuning
+               Designed robust calculation engine for complex formulas
+               Ensured ISO compliance for financial data handling
 
 - title: Senior Full Stack ML Engineer, ONKO(Alvie)
   from: Jan 2022
   to: Jun 2023
   description: |
-               Developed ML models improving healthcare program effectiveness by 15%
-               Established MLOps platform using Kubeflow, Airflow, and MLflow
-               Created comprehensive testing suite ensuring system reliability
-               Implemented robust data governance for healthcare compliance
-               Built predictive analytics pipeline for personalized healthcare
-               Streamlined real-time data ingestion from wearable devices
+               Developed ML models improving patient care program efficiency by 15%
+               Optimized recommendation engine increasing user retention by 25%
+               Implemented real-time monitoring for wearable device data
                Leveraged transfer learning for rapid clinical model deployment
+               Established MLOps platform with Kubeflow, Airflow, and MLflow
+               Created comprehensive testing suite for data pipeline integrity
+               Built data visualization dashboards using JavaScript
+               Developed AWS Lambda functions for data processing
+               Integrated IoT Greengrass for device data management
+               Implemented predictive analytics for patient risk assessment
 
 - title: Full Stack ML Engineer, Aligned Automation
   from: Jul 2021
   to: Dec 2021
   description: |
-               Architected scalable batch processing systems using Kubernetes
-               Integrated RabbitMQ for improved message queue management
-               Automated report generation saving significant operational time
-               Fine-tuned LLMs with custom datasets for enhanced relevance
-               Implemented vector databases for efficient embedding storage
-               Developed serverless pipelines using AWS Lambda and Step Functions
+               Built scalable batch processing improving throughput by 50%
+               Automated PowerPoint generation saving 80 hours monthly
+               Fine-tuned OpenAI models increasing relevance by 30%
+               Implemented prompt engineering for LLM optimization
+               Created data pipeline for CRM personalization
+               Utilized Pinecone for efficient embedding storage
+               Developed FastAPI-based unified CRM platform
+               Engineered Excel system processing 100,000+ rows
+               Integrated AWS Lambda and Step Functions
+               Implemented GitLab CI with SonarQube and Snyk
 
 - title: Tech Lead, Siya Tech Ventures
   from: July 2021
   to: Present
   description: |
-               Leading AI initiatives and technical architecture decisions
-               Mentoring teams in ML/AI integration and best practices
-               Implementing MLOps workflows and scalable architectures
-               Establishing coding standards and review processes
-               Driving innovation in AI-powered solutions
-               Guiding teams in LLM implementation strategies
+               Trained teams on MLFlow, Langchain, RAG, and LLM fine-tuning
+               Implemented solutions with MySQL, PostgreSQL, MongoDB, and vector DBs
+               Developed full-stack applications using React and Node.js
+               Led multiple client projects adapting to diverse requirements
+               Collaborated with teams on specifications and delivery
+               Established testing frameworks for code quality assurance
+               Stayed current with emerging AI and development trends
+               Worked across various domains expanding technical expertise
 
-- title: Software Development Engineer, Compass
+- title: Software Development Engineer, Compass Property Tech
   from: May 2020
   to: July 2021
   description: |
-               Developed core platform features with modern tech stack
-               Implemented automated testing and CI/CD pipelines
-               Optimized database queries and API performance
-               Contributed to architecture decisions
-               Created technical documentation and standards
-               Mentored junior developers and conducted code reviews
+               Developed Risk Assessment of Commit (RAC) tool for CI/CD pipeline
+               Designed automated service for random data generation
+               Created data-driven integration tests for Android applications
+               Established comprehensive Android unit testing infrastructure
+               Refactored codebase to improve testability and maintainability
+               Conducted Android app profiling and performance optimization
+               Built tools for code quality assessment and risk management
+               Integrated new testing practices into development workflow
 
-- title: Full Stack ML Engineer, Fantasy King
+- title: Full Stack ML Engineer, Fantasy King Sports
   from: Jan 2018
   to: May 2020
   description: |
-               Built ML models for player performance prediction
-               Developed real-time statistics processing system
-               Created recommendation systems using collaborative filtering
-               Implemented automated data pipelines
-               Optimized models for real-time predictions
-               Designed analytics dashboards for monitoring
+               Built comprehensive platform using React, Flutter, Flask, and Firebase
+               Engineered real-time match statistics processing system
+               Implemented microservice-based leaderboard system in Go
+               Optimized performance with Redis caching for player rankings
+               Developed Angular PWA for cross-platform accessibility
+               Created RESTful APIs with Node.js for gaming functionalities
+               Built ML models for player performance prediction using ensemble methods
+               Developed recommendation system using collaborative filtering
+               Managed containerized deployment on AWS and GCP
+               Implemented MLflow for experiment tracking and model versioning
 
-- title: Full Stack Data Engineer, Golfhubber
+- title: Full Stack Data Engineer, Golfhubber Sports Marketplace
   from: Apr 2017
   to: Dec 2018
   description: |
-               Engineered robust data pipelines and ETL processes
-               Built analytics dashboards and reporting systems
-               Managed database optimization and maintenance
-               Implemented data quality monitoring tools
-               Created automated data validation processes
-               Developed data warehousing solutions
+               Implemented Firebase Realtime Database for 39,000+ active scorecards
+               Deployed Elasticsearch, optimizing search across 90,000+ entities
+               Developed Node.js Firebase Functions for real-time analytics
+               Managed containerized Elasticsearch on AWS with 99.9% uptime
+               Integrated React, Android, iOS, Flask, and AWS services
+               Optimized Docker deployment improving efficiency by 35%
+               Scaled system to handle 2X user growth and peak loads
+               Engineered AWS data pipeline with Glue, Athena, and Redshift
+               Implemented serverless transforms with Lambda and Step Functions
+               Integrated AWS Data Exchange for external golf datasets
+
+- title: Full Stack Developer, TPI Labs Fintech Compliance
+  from: Aug 2016
+  to: Mar 2017
+  description: |
+               Developed RESTful APIs using Node.js and Express.js for transfer pricing
+               Enhanced security features to pass third-party penetration testing
+               Optimized API performance and database query efficiency
+               Implemented document generation for Word documents
+               Built frontend features using React and TypeScript
+               Integrated ELK stack for logging and monitoring
+               Applied Machine Learning concepts to compliance processes
+               Contributed to containerization for improved deployment
+
+- title: Full Stack Developer, Siya Tech Ventures
+  from: Aug 2016
+  to: May 2020
+  description: |
+               Assisted in developing user interfaces using HTML, CSS, and JavaScript
+               Learned and applied frontend frameworks like React and Angular
+               Implemented responsive designs for cross-device compatibility
+               Assisted in developing and maintaining APIs for frontend consumption
+               Learned database fundamentals and helped with database operations
+               Participated in implementing security measures and data validation
+               Assisted in troubleshooting and debugging full-stack issues
+               Contributed to technical documentation for systems
+               Stayed updated on frontend and backend technologies
+               Collaborated with cross-functional teams on requirements
