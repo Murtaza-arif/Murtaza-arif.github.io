@@ -3,8 +3,8 @@ title               : Murtaza Icecreamwala
 description         : >-
                       Senior Full Stack Engineer building scalable cloud-native SaaS products
                       with Python, Node.js, React, TypeScript, and AI workflows on AWS.
-baseurl             : "murtaza-arif.github.io/"
-repository          : "https://github.com/Murtaza-arif/Murtaza-arif.github.io"
+baseurl             : ""
+repository          : ""
 remote_theme        : yousinix/portfolYOU
 open_new_tab        : true                    # Opens external URLs in new tab (works for posts, projects and navbar only)
 
