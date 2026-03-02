@@ -10,6 +10,7 @@ layout: default
       <div class="text-content">
         <h1 class="name">{{ site.author.name }}</h1>
         <h2 class="title">Senior Full Stack Engineer</h2>
+        <p class="location">Currently based in London, UK</p>
         <div class="button-group">
           <a href="mailto:{{ site.author.email }}" class="cta-button">
             <div class="button-content">
@@ -124,7 +125,14 @@ layout: default
   font-size: 1.8rem;
   color: var(--secondary);
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  color: var(--secondary);
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.9;
 }
 
 .button-group {
