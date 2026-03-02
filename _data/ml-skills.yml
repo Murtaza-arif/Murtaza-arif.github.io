@@ -1,39 +1,39 @@
-- name: Machine Learning/AI
-  percentage: 95
+- name: Applied Machine Learning
+  percentage: 90
   color: success
 
-- name: MLOps
-  percentage: 90
+- name: MLOps with MLflow
+  percentage: 88
   color: secondary
 
-- name: AWS Cloud
+- name: Recommendation Systems
+  percentage: 86
+  color: warning
+
+- name: Data Pipelines (Spark and Glue)
   percentage: 90
-  color: warning
-
-- name: AWS SageMaker
-  percentage: 85
-  color: warning
-
-- name: MLFlow
-  percentage: 85
-  color: success
-
-- name: NLP
-  percentage: 85
   color: info
 
-- name: Data Pipeline/ETL
-  percentage: 85
+- name: AWS Personalize
+  percentage: 84
   color: warning
 
-- name: PyTorch/TensorFlow
-  percentage: 90
-  color: danger
+- name: Batch Data Processing
+  percentage: 88
+  color: success
 
-- name: Computer Vision
-  percentage: 80
+- name: Analytics and Monitoring
+  percentage: 86
   color: primary
 
-- name: Model Optimization
-  percentage: 80
+- name: Model Deployment on AWS
+  percentage: 86
+  color: danger
+
+- name: Data Validation and Quality
+  percentage: 85
+  color: primary
+
+- name: Compliance-Aware Systems
+  percentage: 84
   color: danger

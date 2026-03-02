@@ -9,7 +9,7 @@ layout: default
     <div class="profile-header">
       <div class="text-content">
         <h1 class="name">{{ site.author.name }}</h1>
-        <h2 class="title">Senior Full Stack ML Engineer</h2>
+        <h2 class="title">Senior Full Stack Engineer</h2>
         <div class="button-group">
           <a href="mailto:{{ site.author.email }}" class="cta-button">
             <div class="button-content">
@@ -23,26 +23,22 @@ layout: default
         <img src="https://i.ibb.co/KGF2CLs/murtaza.jpg" alt="{{ site.author.name }}" />
       </div>
     </div>
-
     <div class="stats">
       <div class="stat-item">
-        <h3>8+</h3>
+        <h3>9+</h3>
         <p>Years<br>experience</p>
       </div>
-      
       <div class="stat-item">
-        <h3>30+</h3>
-        <p>ML Models<br>Deployed</p>
+        <h3>60%</h3>
+        <p>Compute Time<br>Reduced</p>
       </div>
-      
       <div class="stat-item">
         <h3>03</h3>
         <p>AWS<br>Certifications</p>
       </div>
-      
       <div class="stat-item">
-        <h3>7+</h3>
-        <p>LLM<br>Projects</p>
+        <h3>100K+</h3>
+        <p>Rows Processed<br>Per Batch</p>
       </div>
     </div>
   </div>

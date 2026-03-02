@@ -1,11 +1,10 @@
 ### Site Settings ###
 title               : Murtaza Icecreamwala
 description         : >-
-                      Building intelligent systems with ML/AI 🤖,
-                      architecting scalable cloud solutions ☁️,
-                      and transforming ideas into reality 💡
-baseurl             : ""
-repository          : ""
+                      Senior Full Stack Engineer building scalable cloud-native SaaS products
+                      with Python, Node.js, React, TypeScript, and AI workflows on AWS.
+baseurl             : "murtaza-arif.github.io/"
+repository          : "https://github.com/Murtaza-arif/Murtaza-arif.github.io"
 remote_theme        : yousinix/portfolYOU
 open_new_tab        : true                    # Opens external URLs in new tab (works for posts, projects and navbar only)
 

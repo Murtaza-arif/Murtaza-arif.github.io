@@ -1,31 +1,31 @@
-- name: OpenAI/GPT
+- name: OpenAI APIs
   percentage: 90
   color: success
 
 - name: LangChain
-  percentage: 85
+  percentage: 88
   color: primary
 
-- name: RAG
+- name: RAG Architectures
   percentage: 90
   color: danger
 
-- name: Prompt Engineering
-  percentage: 85
+- name: Agentic Workflows
+  percentage: 86
   color: warning
 
-- name: Vector Databases
-  percentage: 80
+- name: Prompt Engineering
+  percentage: 84
   color: info
 
-- name: LLM Fine-tuning
-  percentage: 85
+- name: AI Chatbot Development
+  percentage: 86
   color: secondary
 
-- name: Embeddings
-  percentage: 80
+- name: Vector Search and ChromaDB
+  percentage: 82
   color: success
 
-- name: Context Window Optimization
-  percentage: 75
+- name: LLM Observability (Langfuse)
+  percentage: 80
   color: primary
