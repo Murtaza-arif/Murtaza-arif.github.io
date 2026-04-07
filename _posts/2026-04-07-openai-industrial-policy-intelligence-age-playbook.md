@@ -127,7 +127,7 @@ Teams that operationalize this early will be better positioned for both upside c
 
 ## Sources (checked April 7, 2026)
 
-- OpenAI announcement: [Introducing OpenAI for Countries](https://openai.com/index/introducing-openai-for-countries/)
+- OpenAI announcement: [Industrial policy for the Intelligence Age](https://openai.com/index/industrial-policy-for-the-intelligence-age/)
 - OpenAI primary policy paper (PDF): [Industrial Policy for the Intelligence Age: Ideas to Keep People First](https://cdn.openai.com/pdf/561e7512-253e-424b-9734-ef4098440601/Industrial%20Policy%20for%20the%20Intelligence%20Age.pdf)
 - Public X discussion search: [X search for "OpenAI Industrial policy Intelligence Age"](https://x.com/search?q=OpenAI%20Industrial%20policy%20Intelligence%20Age&src=typed_query&f=live)
 - Public LinkedIn discussion search: [LinkedIn content search for "OpenAI Industrial Policy Intelligence Age"](https://www.linkedin.com/search/results/content/?keywords=OpenAI%20Industrial%20Policy%20Intelligence%20Age)
