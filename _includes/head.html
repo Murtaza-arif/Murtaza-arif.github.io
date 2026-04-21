@@ -1,0 +1,85 @@
+<head>
+  {% assign title = page.title | default: site.title | escape %}
+  {% assign document_title = title %}
+  {% assign description = page.description | default: site.description | strip_html | strip_newlines | truncate: 160 %}
+  {% assign raw_image = page.image | default: site.author.image %}
+  {% assign canonical_url = page.url | absolute_url %}
+  {% assign page_type = "website" %}
+  {% assign robots_content = "index,follow" %}
+
+  {% if page.name and page.collection == 'projects' %}
+    {% assign title = page.name | escape %}
+    {% assign document_title = title %}
+  {% endif %}
+
+  {% if page.collection == 'posts' %}
+    {% assign page_type = "article" %}
+  {% endif %}
+
+  {% if page.url == "/404.html" %}
+    {% assign robots_content = "noindex,nofollow" %}
+  {% endif %}
+
+  {% unless title == site.title %}
+    {% capture document_title %}{{ title }} | {{ site.title | escape }}{% endcapture %}
+  {% endunless %}
+
+  {% if raw_image contains '://' %}
+    {% assign image = raw_image %}
+  {% else %}
+    {% assign image = raw_image | absolute_url %}
+  {% endif %}
+
+  {% if site.author.twitter %}
+    {% capture twitter_handle %}@{{ site.author.twitter | remove: '@' }}{% endcapture %}
+  {% endif %}
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ document_title }}</title>
+  <meta name="description" content="{{ description | escape }}">
+  <meta name="robots" content="{{ robots_content }}">
+  <link rel="canonical" href="{{ canonical_url | escape }}">
+  <meta name="theme-color" content="#172033">
+
+  <meta property="og:type" content="{{ page_type }}">
+  <meta property="og:title" content="{{ document_title }}">
+  <meta property="og:description" content="{{ description | escape }}">
+  <meta property="og:image" content="{{ image | escape }}">
+  <meta property="og:url" content="{{ canonical_url | escape }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ document_title }}">
+  <meta name="twitter:description" content="{{ description | escape }}">
+  <meta name="twitter:image" content="{{ image | escape }}">
+  {% if twitter_handle %}
+    <meta name="twitter:creator" content="{{ twitter_handle | escape }}">
+  {% endif %}
+
+  {% if page.collection == 'posts' %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema | escape }}">
+    {% for tag in page.tags limit: 6 %}
+      <meta property="article:tag" content="{{ tag | escape }}">
+    {% endfor %}
+  {% endif %}
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+
+  <!-- Theme style -->
+  <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>

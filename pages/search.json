@@ -4,12 +4,23 @@ permalink: /search.json
 ---
 [
   {% for post in site.posts %}
+    {% if post.external_url %}
+      {% assign search_url = post.external_url %}
+    {% else %}
+      {% assign search_url = post.url | relative_url %}
+    {% endif %}
+    {% assign search_description = post.description | default: post.excerpt | strip_html | strip_newlines %}
+    {% capture search_text %}{{ post.title }} {{ search_description }} {{ post.tags | join: ' ' }} {{ post.date | date: "%d %B %Y" }}{% endcapture %}
     {
-      "title"    : "{{ post.title | escape }}",
-      "category" : "{{ post.category }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
-      "url"      : "{{ post.external_url | default: post.url | relative_url }}",
-      "date"     : "{{ post.date }}"
+      "title": {{ post.title | jsonify }},
+      "category": {{ post.category | default: "" | jsonify }},
+      "tags": {{ post.tags | join: ", " | jsonify }},
+      "tags_list": {{ post.tags | jsonify }},
+      "url": {{ search_url | jsonify }},
+      "date": {{ post.date | date_to_xmlschema | jsonify }},
+      "published_label": {{ post.date | date: "%d %b %Y" | jsonify }},
+      "description": {{ search_description | jsonify }},
+      "search_text": {{ search_text | strip | jsonify }}
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

@@ -1,0 +1,287 @@
+{% assign latest_post = site.posts.first %}
+<section class="blog-shell mt-5">
+  <style>
+    .blog-shell,
+    .blog-feed {
+      --blog-bg: linear-gradient(135deg, rgba(255, 248, 240, 0.96), rgba(245, 249, 255, 0.96));
+      --blog-panel: rgba(255, 255, 255, 0.86);
+      --blog-panel-strong: rgba(255, 255, 255, 0.94);
+      --blog-text: #172033;
+      --blog-muted: #5f6b7a;
+      --blog-border: rgba(23, 32, 51, 0.12);
+      --blog-border-strong: rgba(23, 32, 51, 0.18);
+      --blog-accent: #bf6b2f;
+      --blog-accent-soft: rgba(191, 107, 47, 0.14);
+      --blog-hover: rgba(255, 255, 255, 0.62);
+      --blog-chip-bg: rgba(23, 32, 51, 0.06);
+      color: var(--blog-text);
+    }
+
+    [data-theme="dark"] .blog-shell,
+    [data-theme="dark"] .blog-feed {
+      --blog-bg: linear-gradient(135deg, rgba(23, 27, 38, 0.98), rgba(17, 21, 29, 0.98));
+      --blog-panel: rgba(23, 27, 38, 0.88);
+      --blog-panel-strong: rgba(27, 33, 46, 0.96);
+      --blog-text: #edf2fb;
+      --blog-muted: #a6b3c5;
+      --blog-border: rgba(237, 242, 251, 0.1);
+      --blog-border-strong: rgba(237, 242, 251, 0.18);
+      --blog-accent: #ffb36b;
+      --blog-accent-soft: rgba(255, 179, 107, 0.14);
+      --blog-hover: rgba(255, 255, 255, 0.03);
+      --blog-chip-bg: rgba(255, 255, 255, 0.08);
+    }
+
+    .blog-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 2.5rem;
+      border: 1px solid var(--blog-border);
+      border-radius: 28px;
+      background: var(--blog-bg);
+      box-shadow: 0 24px 60px -40px rgba(15, 23, 42, 0.5);
+    }
+
+    .blog-hero::before,
+    .blog-hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      filter: blur(0.5px);
+    }
+
+    .blog-hero::before {
+      top: -4rem;
+      right: -2rem;
+      width: 18rem;
+      height: 18rem;
+      background: linear-gradient(180deg, rgba(255, 184, 108, 0.28), rgba(255, 184, 108, 0));
+    }
+
+    .blog-hero::after {
+      bottom: -8rem;
+      left: -5rem;
+      width: 20rem;
+      height: 20rem;
+      background: linear-gradient(180deg, rgba(74, 144, 226, 0.12), rgba(74, 144, 226, 0));
+    }
+
+    .blog-kicker {
+      margin-bottom: 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blog-accent);
+    }
+
+    .blog-hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(16rem, 1fr);
+      gap: 2rem;
+      align-items: end;
+      z-index: 1;
+    }
+
+    .blog-title {
+      margin: 0;
+      max-width: 12ch;
+      font-size: clamp(2.35rem, 6vw, 4.25rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .blog-subtitle {
+      margin: 1.15rem 0 0;
+      max-width: 62ch;
+      color: var(--blog-muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .blog-stats {
+      display: grid;
+      gap: 0.9rem;
+      margin: 0;
+    }
+
+    .blog-stats div {
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--blog-border-strong);
+    }
+
+    .blog-stats dt {
+      margin-bottom: 0.2rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blog-muted);
+    }
+
+    .blog-stats dd {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--blog-text);
+    }
+
+    .blog-toolbar {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .blog-search-control {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1 1 20rem;
+      min-width: 0;
+      padding: 0.9rem 1.1rem;
+      border: 1px solid var(--blog-border);
+      border-radius: 999px;
+      background: var(--blog-panel);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 34px -26px rgba(15, 23, 42, 0.55);
+    }
+
+    .blog-search-icon {
+      color: var(--blog-accent);
+      font-size: 0.95rem;
+    }
+
+    .blog-search-input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: var(--blog-text);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .blog-search-input::placeholder {
+      color: var(--blog-muted);
+    }
+
+    .blog-clear-button,
+    .blog-tag-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      padding: 0 1.05rem;
+      border-radius: 999px;
+      border: 1px solid var(--blog-border-strong);
+      background: var(--blog-panel-strong);
+      color: var(--blog-text) !important;
+      font-size: 0.94rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .blog-clear-button:hover,
+    .blog-tag-link:hover {
+      transform: translateY(-1px);
+      border-color: var(--blog-accent);
+      background: var(--blog-accent-soft);
+    }
+
+    .blog-search-status {
+      position: relative;
+      z-index: 1;
+      margin: 1rem 0 0;
+      color: var(--blog-muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .blog-hero {
+        padding: 1.75rem;
+      }
+
+      .blog-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-title {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .blog-hero {
+        padding: 1.4rem;
+        border-radius: 22px;
+      }
+
+      .blog-toolbar {
+        align-items: stretch;
+      }
+
+      .blog-clear-button,
+      .blog-tag-link {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="blog-hero">
+    <p class="blog-kicker">Journal</p>
+    <div class="blog-hero-grid">
+      <div>
+        <h1 class="blog-title">Playbooks for teams shipping AI in production.</h1>
+        <p class="blog-subtitle">
+          Practical notes on LLMOps, cloud architecture, agent systems, developer tooling, and the operating details that matter once prototypes turn into delivery work.
+        </p>
+      </div>
+
+      <dl class="blog-stats" aria-label="Blog statistics">
+        <div>
+          <dt>Posts</dt>
+          <dd>{{ site.posts | size }}</dd>
+        </div>
+        <div>
+          <dt>Latest</dt>
+          <dd>
+            <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: "%d %b %Y" }}</time>
+          </dd>
+        </div>
+        <div>
+          <dt>Topics</dt>
+          <dd>{{ site.tags | size }}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="blog-toolbar" role="search" aria-label="Search blog posts">
+      <label class="sr-only" for="blog-search-input">Search blog posts</label>
+      <div class="blog-search-control">
+        <i class="fas fa-search blog-search-icon" aria-hidden="true"></i>
+        <input
+          id="blog-search-input"
+          class="blog-search-input"
+          type="search"
+          inputmode="search"
+          autocomplete="off"
+          placeholder="Search titles, topics, and summaries"
+        >
+      </div>
+      <button id="blog-search-clear" class="blog-clear-button" type="button" hidden>Clear search</button>
+      <a class="blog-tag-link" href="{{ '/blog/tags' | relative_url }}">Browse tags</a>
+    </div>
+
+    <p id="blog-search-status" class="blog-search-status" aria-live="polite">
+      Showing {{ site.posts | size }} posts
+    </p>
+  </div>
+</section>
