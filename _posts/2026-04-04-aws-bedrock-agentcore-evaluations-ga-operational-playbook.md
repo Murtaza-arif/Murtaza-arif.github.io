@@ -1,5 +1,5 @@
 ---
-title: Amazon Bedrock AgentCore Evaluations Is Now GA: The 2026 Agent Quality Operations Playbook
+title: "Amazon Bedrock AgentCore Evaluations Is Now GA: The 2026 Agent Quality Operations Playbook"
 tags: [AWS, Amazon Bedrock, AgentCore, LLM Evaluation, Agent Engineering]
 style: fill
 color: primary

@@ -1,6 +1,6 @@
 ---
 title: The Evolution of RAG - Beyond Basic Retrieval
-tags: [RAG, LLM, Vector Databases, AI]
+tags: [RAG, LLM, Vector DB, AI]
 style: fill
 color: secondary
 description: Exploring advanced RAG architectures and techniques that are pushing the boundaries of context-aware AI systems, from hybrid retrievers to adaptive chunking strategies.

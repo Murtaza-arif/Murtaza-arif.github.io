@@ -1,5 +1,5 @@
 ---
-title: Gemini Notebooks + NotebookLM Sync: A Practical Project-Memory Playbook for AI Teams
+title: "Gemini Notebooks + NotebookLM Sync: A Practical Project-Memory Playbook for AI Teams"
 tags: [Google Gemini, NotebookLM, AI Workflows, Knowledge Management, Developer Productivity]
 style: fill
 color: primary

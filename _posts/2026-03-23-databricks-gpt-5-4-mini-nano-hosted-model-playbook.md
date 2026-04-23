@@ -1,5 +1,5 @@
 ---
-title: Databricks Adds OpenAI GPT-5.4 Mini and Nano as Hosted Endpoints: The 2026 Throughput-and-Governance Playbook
+title: "Databricks Adds OpenAI GPT-5.4 Mini and Nano as Hosted Endpoints: The 2026 Throughput-and-Governance Playbook"
 tags: [Databricks, OpenAI, GPT-5.4, Model Serving, Enterprise AI]
 style: fill
 color: primary

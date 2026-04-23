@@ -1,5 +1,5 @@
 ---
-title: Amazon Bedrock Guardrails Cross-Account Safeguards Are GA: The 2026 Centralized AI Safety Playbook
+title: "Amazon Bedrock Guardrails Cross-Account Safeguards Are GA: The 2026 Centralized AI Safety Playbook"
 tags: [AWS, Amazon Bedrock, Guardrails, AI Governance, Platform Engineering]
 style: fill
 color: primary

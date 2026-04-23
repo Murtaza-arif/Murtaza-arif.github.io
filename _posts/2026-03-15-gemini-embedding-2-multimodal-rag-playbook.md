@@ -1,6 +1,6 @@
 ---
-title: Gemini Embedding 2 Turns Multimodal Retrieval Into a Single-System Design Problem: The 2026 Operator Playbook
-tags: [Google Gemini, Embeddings, Multimodal RAG, Vertex AI, LLM Operations]
+title: "Gemini Embedding 2 Turns Multimodal Retrieval Into a Single-System Design Problem: The 2026 Operator Playbook"
+tags: [Google Gemini, Embeddings, Multimodal RAG, Vertex AI, LLMOps]
 style: fill
 color: primary
 description: Google’s March 10, 2026 Gemini Embedding 2 release in public preview changes how teams should design retrieval systems for text, image, video, audio, and documents. Here is a practical playbook for production adoption.

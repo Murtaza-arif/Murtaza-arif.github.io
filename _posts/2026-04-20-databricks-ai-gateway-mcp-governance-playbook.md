@@ -1,5 +1,5 @@
 ---
-title: Databricks AI Gateway Governs MCP Servers: Enterprise Control-Plane Rollout Playbook
+title: "Databricks AI Gateway Governs MCP Servers: Enterprise Control-Plane Rollout Playbook"
 tags: [Databricks, MCP, AI Gateway, Agent Governance, Enterprise AI]
 style: fill
 color: primary

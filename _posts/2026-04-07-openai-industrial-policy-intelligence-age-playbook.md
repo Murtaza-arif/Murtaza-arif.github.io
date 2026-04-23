@@ -1,6 +1,6 @@
 ---
-title: OpenAI's Industrial Policy for the Intelligence Age: The 2026 AI Economy Readiness Playbook
-tags: [OpenAI, AI Policy, LLMs, Workforce Strategy, Emerging Technology]
+title: "OpenAI's Industrial Policy for the Intelligence Age: The 2026 AI Economy Readiness Playbook"
+tags: [OpenAI, AI Policy, LLM, Workforce Strategy, Emerging Technology]
 style: fill
 color: primary
 description: OpenAI published "Industrial Policy for the Intelligence Age" in April 2026, outlining proposals on worker voice, AI access, tax modernization, and frontier risk governance that leaders can translate into concrete operating plans now.

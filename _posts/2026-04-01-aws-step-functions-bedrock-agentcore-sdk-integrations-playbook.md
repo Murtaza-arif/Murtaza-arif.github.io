@@ -1,5 +1,5 @@
 ---
-title: AWS Step Functions + Bedrock AgentCore Integration Is a Major Agent Operations Shift: The 2026 Orchestration Playbook
+title: "AWS Step Functions + Bedrock AgentCore Integration Is a Major Agent Operations Shift: The 2026 Orchestration Playbook"
 tags: [AWS, Step Functions, Amazon Bedrock, Agent Engineering, Orchestration]
 style: fill
 color: primary

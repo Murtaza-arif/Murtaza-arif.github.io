@@ -1,6 +1,6 @@
 ---
-title: AWS Bedrock Claude Mythos Preview: A Defensive AI Security Rollout Playbook
-tags: [AWS, Bedrock, Anthropic, Cybersecurity, Emerging Technology]
+title: "AWS Bedrock Claude Mythos Preview: A Defensive AI Security Rollout Playbook"
+tags: [AWS, Amazon Bedrock, Anthropic, Cybersecurity, Emerging Technology]
 style: fill
 color: primary
 description: On April 7, 2026, AWS announced Claude Mythos Preview in gated research preview on Amazon Bedrock through Project Glasswing, signaling that autonomous vulnerability discovery is moving into enterprise security operations.

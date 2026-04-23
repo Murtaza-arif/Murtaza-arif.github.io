@@ -1,5 +1,5 @@
 ---
-title: OpenAI ChatGPT Images 2.0: Thinking-First Visual Workflow Playbook
+title: "OpenAI ChatGPT Images 2.0: Thinking-First Visual Workflow Playbook"
 tags: [OpenAI, ChatGPT, Image Generation, AI Workflows, Product Operations]
 style: fill
 color: primary

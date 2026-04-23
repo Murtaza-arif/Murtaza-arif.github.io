@@ -1,5 +1,5 @@
 ---
-title: Amazon Bedrock TTFT and Quota Observability Is Now a First-Class Production Control: The 2026 Rollout Playbook
+title: "Amazon Bedrock TTFT and Quota Observability Is Now a First-Class Production Control: The 2026 Rollout Playbook"
 tags: [AWS, Amazon Bedrock, Observability, Performance, Agent Engineering]
 style: fill
 color: primary

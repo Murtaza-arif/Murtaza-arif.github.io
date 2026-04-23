@@ -1,5 +1,5 @@
 ---
-title: Amazon Bedrock AgentCore Stateful MCP Support Turns Agent Sessions into Production-Grade Workflow Units: The 2026 Rollout Playbook
+title: "Amazon Bedrock AgentCore Stateful MCP Support Turns Agent Sessions into Production-Grade Workflow Units: The 2026 Rollout Playbook"
 tags: [AWS, Amazon Bedrock, AgentCore, MCP, Agent Engineering]
 style: fill
 color: primary

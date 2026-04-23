@@ -12,11 +12,12 @@
       {% endif %}
 
       {% assign post_summary = post.description | default: post.excerpt | strip_html | strip_newlines %}
+      {% assign primary_tag = post.tags | first %}
       {% capture post_search_text %}{{ post.title }} {{ post_summary }} {{ post.tags | join: ' ' }} {{ post.date | date: "%d %B %Y" }}{% endcapture %}
-      {% assign extra_tags = post.tags | size | minus: 4 %}
+      {% assign extra_tags = post.tags | size | minus: 3 %}
 
       <article
-        class="blog-entry{% if forloop.first %} is-featured{% endif %}"
+        class="blog-entry"
         data-blog-item
         data-search-text="{{ post_search_text | strip | downcase | escape }}"
       >
@@ -26,30 +27,35 @@
           target="{{ post_target }}"
           {% if post_rel != "" %}rel="{{ post_rel }}"{% endif %}
         >
-          <div class="blog-entry-date">
-            <span class="blog-entry-date-label">{% if forloop.first %}Latest{% else %}Published{% endif %}</span>
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
-          </div>
-
           <div class="blog-entry-main">
+            <p class="blog-entry-meta-line">
+              {% if forloop.first %}<span class="blog-latest-label">Latest</span>{% endif %}
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+              {% if primary_tag %}
+                <span aria-hidden="true">/</span>
+                <span>{{ primary_tag }}</span>
+              {% endif %}
+            </p>
+
             <h2 class="blog-entry-title">{{ post.title }}</h2>
             <p class="blog-entry-summary">{{ post_summary }}</p>
 
             {% if post.tags and post.tags.size > 0 %}
               <div class="blog-entry-tags" aria-label="Post tags">
-                {% for tag in post.tags limit: 4 %}
+                {% for tag in post.tags limit: 3 %}
                   <span class="blog-chip">{{ tag }}</span>
                 {% endfor %}
 
                 {% if extra_tags > 0 %}
-                  <span class="blog-chip blog-chip-muted">+{{ extra_tags }} more</span>
+                  <span class="blog-chip blog-chip-muted">+{{ extra_tags }}</span>
                 {% endif %}
               </div>
             {% endif %}
           </div>
 
-          <div class="blog-entry-meta">
-            <span class="blog-entry-cta">Read article <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+          <div class="blog-entry-action" aria-hidden="true">
+            <span>Read</span>
+            <i class="fas fa-arrow-right"></i>
           </div>
         </a>
       </article>
@@ -58,7 +64,7 @@
 
   <div id="blog-empty-state" class="blog-empty-state" hidden>
     <p class="blog-empty-title">No posts match this search yet.</p>
-    <p class="blog-empty-copy">Try a broader topic like OpenAI, AWS, Databricks, RAG, or governance.</p>
+    <p class="blog-empty-copy">Try a broader topic like OpenAI, AWS, Databricks, RAG, governance, or agents.</p>
   </div>
 
   <script>
@@ -179,11 +185,11 @@
 
 <style>
   .blog-list {
-    margin: 1.5rem 0 3.5rem;
+    margin: 0.65rem 0 3.5rem;
   }
 
   .blog-entry {
-    border-top: 1px solid var(--blog-border);
+    border-bottom: 1px solid var(--blog-border);
   }
 
   .blog-entry:first-child {
@@ -192,90 +198,74 @@
 
   .blog-entry-link {
     display: grid;
-    grid-template-columns: minmax(8.5rem, 10rem) minmax(0, 1fr) auto;
-    gap: 1.5rem;
-    align-items: start;
-    padding: 1.35rem 0.2rem;
-    border-radius: 24px;
-    color: var(--blog-text) !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.35rem 0;
+    color: var(--blog-ink) !important;
     text-decoration: none !important;
-    transition: transform 180ms ease, background-color 180ms ease;
+    transition: background-color 160ms ease, padding-left 160ms ease, padding-right 160ms ease;
   }
 
   .blog-entry-link:hover {
-    transform: translateY(-1px);
-    background: var(--blog-hover);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    background: var(--blog-row-hover);
   }
 
-  .blog-entry.is-featured .blog-entry-link {
-    padding: 1.8rem;
-    border: 1px solid var(--blog-border);
-    background: linear-gradient(160deg, var(--blog-panel-strong), rgba(255, 255, 255, 0.62));
-    box-shadow: 0 22px 50px -42px rgba(15, 23, 42, 0.55);
-  }
-
-  [data-theme="dark"] .blog-entry.is-featured .blog-entry-link {
-    background: linear-gradient(160deg, var(--blog-panel-strong), rgba(38, 45, 59, 0.9));
-  }
-
-  .blog-entry-date-label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+  .blog-entry-meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+    margin: 0 0 0.45rem;
     color: var(--blog-muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+    text-transform: uppercase;
   }
 
-  .blog-entry-date time {
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: var(--blog-text);
+  .blog-latest-label {
+    color: var(--blog-accent);
   }
 
   .blog-entry-title {
+    display: block;
     margin: 0;
-    max-width: 28ch;
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-  }
-
-  .blog-entry.is-featured .blog-entry-title {
-    max-width: 22ch;
-    font-size: clamp(1.8rem, 3.5vw, 2.7rem);
-    line-height: 1.05;
+    color: var(--blog-ink) !important;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: -0.035em;
   }
 
   .blog-entry-summary {
-    margin: 0.55rem 0 0;
+    max-width: 72ch;
+    margin: 0.45rem 0 0;
     color: var(--blog-muted);
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .blog-entry.is-featured .blog-entry-summary {
-    max-width: 64ch;
+    font-size: 0.96rem;
+    line-height: 1.62;
   }
 
   .blog-entry-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-top: 1rem;
+    gap: 0.45rem;
+    margin-top: 0.8rem;
   }
 
   .blog-chip {
     display: inline-flex;
     align-items: center;
-    min-height: 2rem;
-    padding: 0.35rem 0.7rem;
+    min-height: 1.75rem;
+    padding: 0.28rem 0.58rem;
     border-radius: 999px;
     background: var(--blog-chip-bg);
-    color: var(--blog-text);
-    font-size: 0.82rem;
-    font-weight: 600;
+    color: var(--blog-ink);
+    font-size: 0.74rem;
+    font-weight: 800;
     line-height: 1;
   }
 
@@ -283,33 +273,34 @@
     color: var(--blog-muted);
   }
 
-  .blog-entry-meta {
-    align-self: center;
-    padding-top: 0.2rem;
-    white-space: nowrap;
+  .blog-entry-action {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
     color: var(--blog-muted);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 800;
+    white-space: nowrap;
   }
 
-  .blog-entry-cta i {
-    margin-left: 0.35rem;
+  .blog-entry-link:hover .blog-entry-action {
+    color: var(--blog-accent);
   }
 
   .blog-empty-state {
-    margin: 0 0 3rem;
-    padding: 2.5rem 1.25rem;
-    border: 1px dashed var(--blog-border-strong);
-    border-radius: 24px;
+    margin: 1rem 0 3rem;
+    padding: 2rem 1.25rem;
+    border-bottom: 1px solid var(--blog-border);
     text-align: center;
     color: var(--blog-muted);
   }
 
   .blog-empty-title {
     margin: 0;
-    color: var(--blog-text);
+    color: var(--blog-ink);
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 800;
   }
 
   .blog-empty-copy {
@@ -317,31 +308,20 @@
     line-height: 1.7;
   }
 
-  @media (max-width: 991.98px) {
+  @media (max-width: 767.98px) {
     .blog-entry-link {
       grid-template-columns: 1fr;
       gap: 0.85rem;
+    }
+
+    .blog-entry-action {
+      justify-content: flex-start;
+    }
+
+    .blog-entry-link:hover {
       padding-left: 0;
       padding-right: 0;
-    }
-
-    .blog-entry.is-featured .blog-entry-link {
-      padding: 1.35rem;
-    }
-
-    .blog-entry-meta {
-      padding-top: 0;
-    }
-  }
-
-  @media (max-width: 575.98px) {
-    .blog-list {
-      margin-top: 1rem;
-    }
-
-    .blog-entry.is-featured .blog-entry-link {
-      padding: 1.15rem;
-      border-radius: 20px;
+      background: transparent;
     }
   }
 </style>

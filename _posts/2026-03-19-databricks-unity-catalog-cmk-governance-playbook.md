@@ -1,5 +1,5 @@
 ---
-title: Databricks Unity Catalog CMK Public Preview Makes Data-Plane Encryption a First-Class Governance Control: The 2026 Rollout Playbook
+title: "Databricks Unity Catalog CMK Public Preview Makes Data-Plane Encryption a First-Class Governance Control: The 2026 Rollout Playbook"
 tags: [Databricks, Unity Catalog, AWS KMS, Data Governance, AI Platform]
 style: fill
 color: primary

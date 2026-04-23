@@ -1,5 +1,5 @@
 ---
-title: OpenAI’s Promptfoo Acquisition Makes Agent Security Evals a Platform Requirement: The 2026 Deployment Playbook
+title: "OpenAI’s Promptfoo Acquisition Makes Agent Security Evals a Platform Requirement: The 2026 Deployment Playbook"
 tags: [OpenAI, Promptfoo, AI Security, Agentic AI, LLM Evaluation]
 style: fill
 color: primary

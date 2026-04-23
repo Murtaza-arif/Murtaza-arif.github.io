@@ -1,6 +1,6 @@
 ---
-title: Amazon Bedrock Projects API Turns OpenAI-Compatible Workloads into Governable Production Units: The 2026 Rollout Playbook
-tags: [AWS, Amazon Bedrock, OpenAI-Compatible APIs, LLM Operations, AI Governance]
+title: "Amazon Bedrock Projects API Turns OpenAI-Compatible Workloads into Governable Production Units: The 2026 Rollout Playbook"
+tags: [AWS, Amazon Bedrock, OpenAI-Compatible APIs, LLMOps, AI Governance]
 style: fill
 color: primary
 description: Amazon Bedrock’s OpenAI-compatible Projects API gives teams app-level isolation, IAM scoping, and cost observability for multi-agent production environments. Here is a practical rollout playbook.

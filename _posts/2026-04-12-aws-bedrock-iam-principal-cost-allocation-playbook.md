@@ -1,5 +1,5 @@
 ---
-title: AWS Bedrock IAM-Principal Cost Allocation: A FinOps Playbook
+title: "AWS Bedrock IAM-Principal Cost Allocation: A FinOps Playbook"
 tags: [AWS, Amazon Bedrock, FinOps, LLMOps, Cost Governance]
 style: fill
 color: primary

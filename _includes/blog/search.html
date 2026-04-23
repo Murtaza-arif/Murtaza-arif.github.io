@@ -3,156 +3,122 @@
   <style>
     .blog-shell,
     .blog-feed {
-      --blog-bg: linear-gradient(135deg, rgba(255, 248, 240, 0.96), rgba(245, 249, 255, 0.96));
-      --blog-panel: rgba(255, 255, 255, 0.86);
-      --blog-panel-strong: rgba(255, 255, 255, 0.94);
-      --blog-text: #172033;
-      --blog-muted: #5f6b7a;
-      --blog-border: rgba(23, 32, 51, 0.12);
-      --blog-border-strong: rgba(23, 32, 51, 0.18);
-      --blog-accent: #bf6b2f;
-      --blog-accent-soft: rgba(191, 107, 47, 0.14);
-      --blog-hover: rgba(255, 255, 255, 0.62);
-      --blog-chip-bg: rgba(23, 32, 51, 0.06);
-      color: var(--blog-text);
+      --blog-surface: #f7f3eb;
+      --blog-ink: #151515;
+      --blog-muted: #6d6a63;
+      --blog-border: rgba(21, 21, 21, 0.16);
+      --blog-border-strong: rgba(21, 21, 21, 0.28);
+      --blog-accent: #d97706;
+      --blog-accent-soft: rgba(217, 119, 6, 0.12);
+      --blog-row-hover: rgba(21, 21, 21, 0.035);
+      --blog-chip-bg: rgba(21, 21, 21, 0.065);
+      color: var(--blog-ink);
     }
 
     [data-theme="dark"] .blog-shell,
     [data-theme="dark"] .blog-feed {
-      --blog-bg: linear-gradient(135deg, rgba(23, 27, 38, 0.98), rgba(17, 21, 29, 0.98));
-      --blog-panel: rgba(23, 27, 38, 0.88);
-      --blog-panel-strong: rgba(27, 33, 46, 0.96);
-      --blog-text: #edf2fb;
-      --blog-muted: #a6b3c5;
-      --blog-border: rgba(237, 242, 251, 0.1);
-      --blog-border-strong: rgba(237, 242, 251, 0.18);
-      --blog-accent: #ffb36b;
-      --blog-accent-soft: rgba(255, 179, 107, 0.14);
-      --blog-hover: rgba(255, 255, 255, 0.03);
-      --blog-chip-bg: rgba(255, 255, 255, 0.08);
+      --blog-surface: #111418;
+      --blog-ink: #f4efe6;
+      --blog-muted: #aaa59d;
+      --blog-border: rgba(244, 239, 230, 0.14);
+      --blog-border-strong: rgba(244, 239, 230, 0.26);
+      --blog-accent: #f2b05e;
+      --blog-accent-soft: rgba(242, 176, 94, 0.16);
+      --blog-row-hover: rgba(244, 239, 230, 0.045);
+      --blog-chip-bg: rgba(244, 239, 230, 0.08);
     }
 
-    .blog-hero {
-      position: relative;
-      overflow: hidden;
-      padding: 2.5rem;
-      border: 1px solid var(--blog-border);
-      border-radius: 28px;
-      background: var(--blog-bg);
-      box-shadow: 0 24px 60px -40px rgba(15, 23, 42, 0.5);
+    .blog-briefing {
+      padding: 1.4rem 0 1.25rem;
+      border-top: 1px solid var(--blog-border-strong);
+      border-bottom: 1px solid var(--blog-border-strong);
     }
 
-    .blog-hero::before,
-    .blog-hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      pointer-events: none;
-      filter: blur(0.5px);
-    }
-
-    .blog-hero::before {
-      top: -4rem;
-      right: -2rem;
-      width: 18rem;
-      height: 18rem;
-      background: linear-gradient(180deg, rgba(255, 184, 108, 0.28), rgba(255, 184, 108, 0));
-    }
-
-    .blog-hero::after {
-      bottom: -8rem;
-      left: -5rem;
-      width: 20rem;
-      height: 20rem;
-      background: linear-gradient(180deg, rgba(74, 144, 226, 0.12), rgba(74, 144, 226, 0));
-    }
-
-    .blog-kicker {
-      margin-bottom: 0.9rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--blog-accent);
-    }
-
-    .blog-hero-grid {
-      position: relative;
+    .blog-briefing-top {
       display: grid;
-      grid-template-columns: minmax(0, 2.3fr) minmax(16rem, 1fr);
-      gap: 2rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1.5rem;
       align-items: end;
-      z-index: 1;
     }
 
-    .blog-title {
+    .blog-topic {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--blog-accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .blog-briefing-title {
       margin: 0;
-      max-width: 12ch;
-      font-size: clamp(2.35rem, 6vw, 4.25rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
+      color: var(--blog-ink);
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.045em;
     }
 
-    .blog-subtitle {
-      margin: 1.15rem 0 0;
-      max-width: 62ch;
+    .blog-briefing-copy {
+      max-width: 68ch;
+      margin: 0.65rem 0 0;
       color: var(--blog-muted);
-      font-size: 1.02rem;
-      line-height: 1.75;
+      font-size: 0.98rem;
+      line-height: 1.65;
     }
 
     .blog-stats {
-      display: grid;
-      gap: 0.9rem;
+      display: flex;
+      gap: 1.25rem;
       margin: 0;
+      white-space: nowrap;
     }
 
     .blog-stats div {
-      padding-top: 0.85rem;
-      border-top: 1px solid var(--blog-border-strong);
+      min-width: 4.5rem;
+      padding-left: 1rem;
+      border-left: 1px solid var(--blog-border);
     }
 
     .blog-stats dt {
-      margin-bottom: 0.2rem;
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      margin-bottom: 0.28rem;
       color: var(--blog-muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
     .blog-stats dd {
       margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--blog-text);
+      color: var(--blog-ink);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.2;
     }
 
     .blog-toolbar {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
       gap: 0.75rem;
       align-items: center;
-      margin-top: 2rem;
+      margin-top: 1.35rem;
     }
 
     .blog-search-control {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      flex: 1 1 20rem;
       min-width: 0;
-      padding: 0.9rem 1.1rem;
-      border: 1px solid var(--blog-border);
-      border-radius: 999px;
-      background: var(--blog-panel);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 14px 34px -26px rgba(15, 23, 42, 0.55);
+      padding: 0.78rem 0;
+      border-bottom: 1px solid var(--blog-border-strong);
     }
 
     .blog-search-icon {
+      flex: 0 0 auto;
       color: var(--blog-accent);
       font-size: 0.95rem;
     }
@@ -163,7 +129,7 @@
       border: 0;
       padding: 0;
       background: transparent;
-      color: var(--blog-text);
+      color: var(--blog-ink);
       font-size: 1rem;
       outline: none;
     }
@@ -177,16 +143,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 3rem;
-      padding: 0 1.05rem;
-      border-radius: 999px;
+      min-height: 2.65rem;
+      padding: 0 0.95rem;
       border: 1px solid var(--blog-border-strong);
-      background: var(--blog-panel-strong);
-      color: var(--blog-text) !important;
-      font-size: 0.94rem;
-      font-weight: 600;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--blog-ink) !important;
+      font-size: 0.88rem;
+      font-weight: 800;
       text-decoration: none !important;
-      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
     }
 
     .blog-clear-button:hover,
@@ -197,35 +163,31 @@
     }
 
     .blog-search-status {
-      position: relative;
-      z-index: 1;
-      margin: 1rem 0 0;
+      margin: 0.9rem 0 0;
       color: var(--blog-muted);
-      font-size: 0.94rem;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     @media (max-width: 991.98px) {
-      .blog-hero {
-        padding: 1.75rem;
-      }
-
-      .blog-hero-grid {
+      .blog-briefing-top {
         grid-template-columns: 1fr;
+        gap: 1rem;
       }
 
-      .blog-title {
-        max-width: none;
+      .blog-stats {
+        flex-wrap: wrap;
+      }
+
+      .blog-stats div:first-child {
+        padding-left: 0;
+        border-left: 0;
       }
     }
 
     @media (max-width: 575.98px) {
-      .blog-hero {
-        padding: 1.4rem;
-        border-radius: 22px;
-      }
-
       .blog-toolbar {
-        align-items: stretch;
+        grid-template-columns: 1fr;
       }
 
       .blog-clear-button,
@@ -235,13 +197,13 @@
     }
   </style>
 
-  <div class="blog-hero">
-    <p class="blog-kicker">Journal</p>
-    <div class="blog-hero-grid">
+  <div class="blog-briefing">
+    <div class="blog-briefing-top">
       <div>
-        <h1 class="blog-title">Playbooks for teams shipping AI in production.</h1>
-        <p class="blog-subtitle">
-          Practical notes on LLMOps, cloud architecture, agent systems, developer tooling, and the operating details that matter once prototypes turn into delivery work.
+        <span class="blog-topic">Trending AI development</span>
+        <h1 class="blog-briefing-title">AI platform updates, decoded into engineering playbooks.</h1>
+        <p class="blog-briefing-copy">
+          Source-aware notes on model releases, agent tooling, cloud AI platforms, governance, and the practical changes teams should track next.
         </p>
       </div>
 
@@ -253,7 +215,7 @@
         <div>
           <dt>Latest</dt>
           <dd>
-            <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: "%d %b %Y" }}</time>
+            <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: "%d %b" }}</time>
           </dd>
         </div>
         <div>
@@ -273,10 +235,10 @@
           type="search"
           inputmode="search"
           autocomplete="off"
-          placeholder="Search titles, topics, and summaries"
+          placeholder="Search AI updates, vendors, platforms, or topics"
         >
       </div>
-      <button id="blog-search-clear" class="blog-clear-button" type="button" hidden>Clear search</button>
+      <button id="blog-search-clear" class="blog-clear-button" type="button" hidden>Clear</button>
       <a class="blog-tag-link" href="{{ '/blog/tags' | relative_url }}">Browse tags</a>
     </div>
 

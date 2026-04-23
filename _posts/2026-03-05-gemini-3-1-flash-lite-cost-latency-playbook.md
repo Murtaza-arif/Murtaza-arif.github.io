@@ -1,5 +1,5 @@
 ---
-title: Gemini 3.1 Flash-Lite Changes the Cost-Latency Curve: A Practical Playbook for High-Volume AI Teams
+title: "Gemini 3.1 Flash-Lite Changes the Cost-Latency Curve: A Practical Playbook for High-Volume AI Teams"
 tags: [Google Gemini, LLM, AI Engineering, Cost Optimization, Developer Tools]
 style: fill
 color: primary

@@ -1,5 +1,5 @@
 ---
-title: Databricks Unity REST Write/Create Beta: External Delta Client Rollout Playbook
+title: "Databricks Unity REST Write/Create Beta: External Delta Client Rollout Playbook"
 tags: [Databricks, Unity Catalog, Delta Lake, Data Governance, AI Data Platforms]
 style: fill
 color: primary

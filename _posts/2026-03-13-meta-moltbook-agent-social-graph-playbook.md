@@ -1,9 +1,9 @@
 ---
-title: Meta’s Moltbook Deal Signals the Next Agent Battleground Is Identity and Coordination: The 2026 Operator Playbook
-tags: [Meta, AI Agents, Agent Identity, LLM Operations, Emerging Tech]
+title: "Meta’s Moltbook Deal Signals the Next Agent Battleground Is Identity and Coordination: The 2026 Operator Playbook"
+tags: [Meta, AI Agents, Agent Identity, LLMOps, Emerging Technology]
 style: fill
 color: primary
-description: Meta’s March 10, 2026 Moltbook acquisition highlights a new operational frontier for agentic systems: verified identity, agent-to-agent coordination, and trust controls. Here is a practical playbook for teams building production agent networks.
+description: "Meta’s March 10, 2026 Moltbook acquisition highlights a new operational frontier for agentic systems: verified identity, agent-to-agent coordination, and trust controls. Here is a practical playbook for teams building production agent networks."
 ---
 
 # Meta’s Moltbook Deal Signals the Next Agent Battleground Is Identity and Coordination: The 2026 Operator Playbook

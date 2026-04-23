@@ -1,5 +1,5 @@
 ---
-title: Databricks Workspace Skills for Genie Code: The Team-Scale Agent Playbook
+title: "Databricks Workspace Skills for Genie Code: The Team-Scale Agent Playbook"
 tags: [Databricks, Genie Code, AI Agents, Data Platform, Enterprise AI]
 style: fill
 color: primary

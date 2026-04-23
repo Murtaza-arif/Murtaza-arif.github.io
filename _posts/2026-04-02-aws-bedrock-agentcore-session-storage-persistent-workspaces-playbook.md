@@ -1,5 +1,5 @@
 ---
-title: Bedrock AgentCore Session Storage Changes How Coding Agents Recover: The 2026 Persistent Workspace Playbook
+title: "Bedrock AgentCore Session Storage Changes How Coding Agents Recover: The 2026 Persistent Workspace Playbook"
 tags: [AWS, Amazon Bedrock, Agent Engineering, AI Infrastructure, Developer Productivity]
 style: fill
 color: primary

@@ -1,5 +1,5 @@
 ---
-title: Gemini in Workspace Becomes an In-Workflow Execution Layer: The 2026 Operator Playbook
+title: "Gemini in Workspace Becomes an In-Workflow Execution Layer: The 2026 Operator Playbook"
 tags: [Google Gemini, Google Workspace, Enterprise AI, AI Productivity, Workflow Automation]
 style: fill
 color: primary

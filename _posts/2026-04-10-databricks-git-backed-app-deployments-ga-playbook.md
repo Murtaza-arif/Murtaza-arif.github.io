@@ -1,5 +1,5 @@
 ---
-title: Databricks Git-Backed App Deployments GA: A CI/CD Governance Playbook
+title: "Databricks Git-Backed App Deployments GA: A CI/CD Governance Playbook"
 tags: [Databricks, DevOps, MLOps, AI Engineering, Enterprise AI]
 style: fill
 color: primary

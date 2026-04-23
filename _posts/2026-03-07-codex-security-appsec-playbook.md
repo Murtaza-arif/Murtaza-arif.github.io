@@ -1,5 +1,5 @@
 ---
-title: Codex Security Is the New AppSec Bottleneck Breaker: A Practical Adoption Playbook
+title: "Codex Security Is the New AppSec Bottleneck Breaker: A Practical Adoption Playbook"
 tags: [OpenAI, Codex Security, Application Security, DevSecOps, AI Agents]
 style: fill
 color: primary

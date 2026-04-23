@@ -1,5 +1,5 @@
 ---
-title: OpenAI’s Next Phase of Enterprise AI: An Operating Model Playbook
+title: "OpenAI’s Next Phase of Enterprise AI: An Operating Model Playbook"
 tags: [OpenAI, Enterprise AI, AI Agents, LLMOps, AI Strategy]
 style: fill
 color: primary

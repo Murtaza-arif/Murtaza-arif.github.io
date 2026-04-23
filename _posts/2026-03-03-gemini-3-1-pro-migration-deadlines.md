@@ -1,5 +1,5 @@
 ---
-title: Gemini API Migration Deadlines This Week: What Teams Need to Change Now
+title: "Gemini API Migration Deadlines This Week: What Teams Need to Change Now"
 tags: [Google Gemini, LLM, API Migration, AI Engineering, Developer Tools]
 style: fill
 color: primary

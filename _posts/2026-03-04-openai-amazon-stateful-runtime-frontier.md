@@ -1,5 +1,5 @@
 ---
-title: OpenAI + Amazon’s Stateful Runtime Bet: What Enterprise Teams Should Do Next
+title: "OpenAI + Amazon’s Stateful Runtime Bet: What Enterprise Teams Should Do Next"
 tags: [OpenAI, AWS, LLM, AI Infrastructure, Enterprise AI]
 style: fill
 color: primary

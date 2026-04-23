@@ -1,5 +1,5 @@
 ---
-title: GPT-5.3 Instant Signals a New Battleground in Enterprise AI: Everyday Reliability
+title: "GPT-5.3 Instant Signals a New Battleground in Enterprise AI: Everyday Reliability"
 tags: [OpenAI, GPT-5.3 Instant, LLM Reliability, AI Product Strategy, Enterprise AI]
 style: fill
 color: primary

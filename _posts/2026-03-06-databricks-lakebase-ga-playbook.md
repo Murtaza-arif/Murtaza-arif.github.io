@@ -1,5 +1,5 @@
 ---
-title: Databricks Lakebase GA Is a Real Signal for Agentic Data Apps: A Practical Rollout Playbook
+title: "Databricks Lakebase GA Is a Real Signal for Agentic Data Apps: A Practical Rollout Playbook"
 tags: [Databricks, Lakebase, Postgres, AI Agents, Data Engineering]
 style: fill
 color: primary

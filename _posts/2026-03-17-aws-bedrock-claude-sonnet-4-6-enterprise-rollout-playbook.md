@@ -1,6 +1,6 @@
 ---
-title: Claude Sonnet 4.6 on Amazon Bedrock Reframes Enterprise Agent Deployment Economics: The 2026 Rollout Playbook
-tags: [AWS, Amazon Bedrock, Anthropic, Claude Sonnet 4.6, LLM Operations]
+title: "Claude Sonnet 4.6 on Amazon Bedrock Reframes Enterprise Agent Deployment Economics: The 2026 Rollout Playbook"
+tags: [AWS, Amazon Bedrock, Anthropic, Claude Sonnet 4.6, LLMOps]
 style: fill
 color: primary
 description: Anthropic’s Claude Sonnet 4.6 launch on Amazon Bedrock, plus Bedrock’s OpenAI-compatible infrastructure updates, changes how teams should ship secure high-volume agent workflows. Here is a practical rollout playbook.

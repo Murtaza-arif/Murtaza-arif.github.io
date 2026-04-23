@@ -1,6 +1,6 @@
 ---
-title: GPT-4o Is Fully Retired in ChatGPT as of April 3, 2026: The Custom GPT Migration Playbook
-tags: [OpenAI, ChatGPT, LLM Operations, AI Governance, Migration]
+title: "GPT-4o Is Fully Retired in ChatGPT as of April 3, 2026: The Custom GPT Migration Playbook"
+tags: [OpenAI, ChatGPT, LLMOps, AI Governance, Migration]
 style: fill
 color: primary
 description: OpenAI’s GPT-4o retirement is now fully in effect across ChatGPT plans, including Business, Enterprise, and Edu Custom GPTs, forcing teams to complete model migration, validation, and governance updates now.

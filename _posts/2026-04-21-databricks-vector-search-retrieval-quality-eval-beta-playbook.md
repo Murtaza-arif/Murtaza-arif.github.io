@@ -1,5 +1,5 @@
 ---
-title: Databricks Vector Search Retrieval Quality Eval (Beta): RAG Quality Rollout Playbook
+title: "Databricks Vector Search Retrieval Quality Eval (Beta): RAG Quality Rollout Playbook"
 tags: [Databricks, Vector Search, RAG, Retrieval Evaluation, LLMOps]
 style: fill
 color: primary

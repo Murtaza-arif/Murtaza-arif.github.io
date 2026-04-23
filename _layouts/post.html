@@ -1,0 +1,463 @@
+---
+layout: default
+---
+
+{% assign words = content | number_of_words %}
+{% assign read_minutes = words | divided_by: 220 %}
+{% if read_minutes < 1 %}
+  {% assign read_minutes = 1 %}
+{% endif %}
+{% capture focus_tags %}
+  {%- for tag in page.tags limit: 3 -%}
+    {{ tag }}{% unless forloop.last %}, {% endunless %}
+  {%- endfor -%}
+{% endcapture %}
+
+<article class="blog-post-detail">
+  <style>
+    .blog-post-detail {
+      --post-ink: #151515;
+      --post-muted: #6b665e;
+      --post-soft: rgba(21, 21, 21, 0.055);
+      --post-border: rgba(21, 21, 21, 0.15);
+      --post-border-strong: rgba(21, 21, 21, 0.28);
+      --post-accent: #d97706;
+      --post-accent-soft: rgba(217, 119, 6, 0.12);
+      --post-table-head: #151515;
+      --post-table-head-text: #fff;
+      color: var(--post-ink);
+    }
+
+    [data-theme="dark"] .blog-post-detail {
+      --post-ink: #f4efe6;
+      --post-muted: #aaa59d;
+      --post-soft: rgba(244, 239, 230, 0.07);
+      --post-border: rgba(244, 239, 230, 0.14);
+      --post-border-strong: rgba(244, 239, 230, 0.28);
+      --post-accent: #f2b05e;
+      --post-accent-soft: rgba(242, 176, 94, 0.16);
+      --post-table-head: #2b241c;
+      --post-table-head-text: #f4efe6;
+    }
+
+    .post-back-link {
+      display: inline-flex;
+      gap: 0.45rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      color: var(--post-muted) !important;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none !important;
+      transition: color 160ms ease, transform 160ms ease;
+    }
+
+    .post-back-link:hover {
+      color: var(--post-accent) !important;
+      transform: translateX(-2px);
+    }
+
+    .post-header {
+      max-width: 860px;
+      padding: 1.6rem 0 1.4rem;
+      border-top: 1px solid var(--post-border-strong);
+      border-bottom: 1px solid var(--post-border);
+    }
+
+    .post-meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+      margin: 0 0 0.75rem;
+      color: var(--post-muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .post-title {
+      max-width: 18ch;
+      margin: 0;
+      color: var(--post-ink);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+    }
+
+    .post-description {
+      max-width: 68ch;
+      margin: 0.85rem 0 0;
+      color: var(--post-muted);
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
+      line-height: 1.65;
+    }
+
+    .post-tags-block {
+      margin-top: 1.15rem;
+    }
+
+    .post-tags-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--post-muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .post-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.85rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--post-soft);
+      color: var(--post-ink) !important;
+      font-size: 0.76rem;
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none !important;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .post-tag:hover {
+      background: var(--post-accent-soft);
+      color: var(--post-accent) !important;
+    }
+
+    .post-reading-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 740px) minmax(12rem, 1fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .post-reading-rail {
+      position: sticky;
+      top: 1.5rem;
+      padding-top: 0.25rem;
+      color: var(--post-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .post-rail-block {
+      padding: 1rem 0;
+      border-top: 1px solid var(--post-border);
+    }
+
+    .post-rail-label {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--post-muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .post-rail-value {
+      margin: 0;
+      color: var(--post-ink);
+      font-weight: 700;
+    }
+
+    .blog-article-body {
+      max-width: 740px;
+      color: var(--post-ink);
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .blog-article-body > h1:first-child {
+      display: none;
+    }
+
+    .blog-article-body p {
+      margin: 1rem 0;
+    }
+
+    .blog-article-body h1,
+    .blog-article-body h2,
+    .blog-article-body h3,
+    .blog-article-body h4 {
+      color: var(--post-ink);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.22;
+    }
+
+    .blog-article-body h1 {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+    }
+
+    .blog-article-body h2 {
+      margin-top: 2.3rem;
+      padding-top: 1.05rem;
+      border-top: 1px solid var(--post-border);
+      font-size: clamp(1.28rem, 2vw, 1.55rem);
+    }
+
+    .blog-article-body h3 {
+      margin-top: 1.7rem;
+      font-size: clamp(1.08rem, 1.5vw, 1.18rem);
+    }
+
+    .blog-article-body h4 {
+      margin-top: 1.4rem;
+      font-size: 1rem;
+    }
+
+    .blog-article-body ul,
+    .blog-article-body ol {
+      padding-left: 1.25rem;
+      margin: 0.9rem 0 1.1rem;
+    }
+
+    .blog-article-body li {
+      margin: 0.35rem 0;
+      padding-left: 0.15rem;
+    }
+
+    .blog-article-body strong {
+      color: var(--post-ink);
+      font-weight: 800;
+    }
+
+    .blog-article-body a:not(.btn):not(.no-underline) {
+      color: var(--post-accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .blog-article-body a:not(.btn):not(.no-underline)::after {
+      background: var(--post-accent);
+    }
+
+    .blog-article-body blockquote {
+      margin: 1.35rem 0;
+      padding: 0.2rem 0 0.2rem 1rem;
+      border-left: 3px solid var(--post-accent);
+      color: var(--post-muted);
+      font-size: 0.98rem;
+    }
+
+    .blog-article-body pre {
+      margin: 1.25rem 0;
+      padding: 1rem;
+      border: 1px solid var(--post-border);
+      border-radius: 14px;
+      background: var(--post-soft);
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+
+    .blog-article-body code.highlighter-rouge {
+      border-radius: 6px;
+      background: var(--post-soft);
+      color: var(--post-ink);
+      font-size: 0.9em;
+      padding: 0.16em 0.45em;
+    }
+
+    .blog-article-body table:not(.highlight) {
+      margin: 1.25rem 0;
+      font-size: 0.92rem;
+    }
+
+    .blog-article-body table:not(.highlight) th {
+      background: var(--post-table-head);
+      color: var(--post-table-head-text);
+    }
+
+    .post-footer-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 740px;
+      margin: 3rem 0 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--post-border-strong);
+    }
+
+    .post-footer-link {
+      display: block;
+      padding: 1rem 0;
+      color: var(--post-ink) !important;
+      text-decoration: none !important;
+      transition: color 160ms ease, transform 160ms ease;
+    }
+
+    .post-footer-link:hover {
+      color: var(--post-accent) !important;
+      transform: translateY(-1px);
+    }
+
+    .post-footer-link span {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--post-muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .post-footer-link strong {
+      display: block;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    .post-footer-link.next-post {
+      text-align: right;
+    }
+
+    @media (max-width: 991.98px) {
+      .post-title {
+        max-width: 22ch;
+      }
+
+      .post-reading-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .post-reading-rail {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .post-rail-block {
+        padding: 0.8rem 0;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .post-header {
+        padding-top: 1.25rem;
+      }
+
+      .post-reading-rail,
+      .post-footer-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .post-footer-link.next-post {
+        text-align: left;
+      }
+
+      .blog-article-body {
+        font-size: 0.98rem;
+        line-height: 1.74;
+      }
+    }
+  </style>
+
+  <a class="post-back-link" href="{{ '/blog/' | relative_url }}">
+    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+    <span>All AI updates</span>
+  </a>
+
+  <header class="post-header">
+    <p class="post-meta-line">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
+      <span aria-hidden="true">/</span>
+      <span>{{ read_minutes }} min read</span>
+      {% if page.tags and page.tags.size > 0 %}
+        <span aria-hidden="true">/</span>
+        <span>{{ page.tags | first }}</span>
+      {% endif %}
+    </p>
+
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="post-tags-block">
+        <span class="post-tags-label">Topics</span>
+        <nav class="post-tags" aria-label="Post tags">
+          {% for tag in page.tags %}
+            <a class="post-tag" href="{{ tag | slugify | prepend:'/blog/tags#' | relative_url }}">{{ tag }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="post-reading-layout">
+    <div>
+      <div class="blog-article-body markdown-body">
+        {{ content }}
+      </div>
+
+      <nav class="post-footer-nav" aria-label="Adjacent posts">
+        {% if page.previous %}
+          <a class="post-footer-link" href="{{ page.previous.url | relative_url }}">
+            <span>Previous</span>
+            <strong>{{ page.previous.title }}</strong>
+          </a>
+        {% else %}
+          <a class="post-footer-link" href="{{ '/blog/' | relative_url }}">
+            <span>Archive</span>
+            <strong>Browse all AI development posts</strong>
+          </a>
+        {% endif %}
+
+        {% if page.next %}
+          <a class="post-footer-link next-post" href="{{ page.next.url | relative_url }}">
+            <span>Next</span>
+            <strong>{{ page.next.title }}</strong>
+          </a>
+        {% else %}
+          <a class="post-footer-link next-post" href="{{ '/blog/' | relative_url }}">
+            <span>Latest</span>
+            <strong>Return to the full AI update feed</strong>
+          </a>
+        {% endif %}
+      </nav>
+    </div>
+
+    <aside class="post-reading-rail" aria-label="Reading details">
+      <div class="post-rail-block">
+        <span class="post-rail-label">Reading time</span>
+        <p class="post-rail-value">{{ read_minutes }} min</p>
+      </div>
+      <div class="post-rail-block">
+        <span class="post-rail-label">Published</span>
+        <p class="post-rail-value">{{ page.date | date: "%d %b %Y" }}</p>
+      </div>
+      {% if page.tags and page.tags.size > 0 %}
+        <div class="post-rail-block">
+          <span class="post-rail-label">Focus</span>
+          <p class="post-rail-value">{{ focus_tags | strip }}</p>
+        </div>
+      {% endif %}
+    </aside>
+  </div>
+
+  {% if page.comments %}
+    <div class="pt-5">
+      {% include blog/disqus.html %}
+    </div>
+  {% endif %}
+</article>

@@ -1,6 +1,6 @@
 ---
-title: NVIDIA Nemotron 3 Super Shifts the Open-Model Race to Agent Throughput: The 2026 Operator Playbook
-tags: [NVIDIA, Nemotron 3 Super, Agentic AI, Open Models, LLM Operations]
+title: "NVIDIA Nemotron 3 Super Shifts the Open-Model Race to Agent Throughput: The 2026 Operator Playbook"
+tags: [NVIDIA, Nemotron 3 Super, Agentic AI, Open Models, LLMOps]
 style: fill
 color: primary
 description: NVIDIA’s March 11, 2026 Nemotron 3 Super launch reframes enterprise agent design around throughput, long-context memory, and open deployment control. Here is a practical playbook for teams evaluating agentic AI at production scale.
